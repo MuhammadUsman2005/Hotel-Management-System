@@ -18,11 +18,17 @@
     <ClCompile Include="Login.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BookRoom.cpp">
-      <Filter>Header Files</Filter>
+    <ClCompile Include="MainPage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BookRooms.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CheckAvailability.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GenerateBills.cpp">
-      <Filter>Header Files</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -32,16 +38,16 @@
     <ClInclude Include="MainPage.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Header.h">
+    <ClInclude Include="BookRooms.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ViewDetails.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BookRoom.h">
+    <ClInclude Include="GenerateBills.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GenerateBills.h">
+    <ClInclude Include="CheckAvailability.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

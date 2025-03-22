@@ -1,5 +1,4 @@
 #include "Login.h"
-#include <string.h>
 #include "MainPage.h"
 #include <string>
 
@@ -15,14 +14,13 @@ using namespace System::Drawing;
 using namespace HOTELMANAGEMENTSYSTEM;
 
   
-     void main(array<String^>^ args)
-    {
-         
-        Application::EnableVisualStyles();
-        Application::SetCompatibleTextRenderingDefault(false);
-        HOTELMANAGEMENTSYSTEM::Login form;
-        Application::Run(% form);
-    }
+     int main(array<String^>^ args)
+     {
+         Application::EnableVisualStyles();
+         Application::SetCompatibleTextRenderingDefault(false);
+         HOTELMANAGEMENTSYSTEM::Login form;
+         Application::Run(% form);
+     }
 
 
 
@@ -33,7 +31,7 @@ void Login::CheckLogin(System::Object^ sender, System::EventArgs^ e)
     String^ userName = textBoxUserName->Text;
     String^ password = textBoxPassword->Text;
 
-    if (userName == "Admin" && password == "123")
+    if (userName == "admin" && password == "123")
     {
         MessageBox::Show("Login Successful");
         this->Hide();
@@ -49,3 +47,5 @@ void Login::CheckLogin(System::Object^ sender, System::EventArgs^ e)
 
 
 }
+
+
