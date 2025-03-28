@@ -123,7 +123,8 @@
     <ClCompile Include="CheckAvailability.cpp" />
     <ClCompile Include="GenerateBills.cpp" />
     <ClCompile Include="Login.cpp" />
-    <ClCompile Include="MainPage.cpp" />
+    <ClCompile Include="Dashboard.cpp" />
+    <ClCompile Include="ViewDetails.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CheckAvailability.h">
@@ -138,7 +139,7 @@
     <ClInclude Include="Login.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="MainPage.h">
+    <ClInclude Include="Dashboard.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="BookRooms.h">
@@ -158,8 +159,8 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainPage.resx">
-      <DependentUpon>MainPage.h</DependentUpon>
+    <EmbeddedResource Include="Dashboard.resx">
+      <DependentUpon>Dashboard.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BookRooms.resx">
       <DependentUpon>BookRooms.h</DependentUpon>

@@ -18,9 +18,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 		ViewDetails(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
+			LoadData();
 		}
 
 	protected:
@@ -37,7 +35,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 
 	protected:
 
-
+		void LoadData();
 
 
 
@@ -65,6 +63,12 @@ namespace HOTELMANAGEMENTSYSTEM {
 	private: System::Windows::Forms::Label^ label2;
 
 	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::Button^ BackButton;
+	private: System::Windows::Forms::Button^ NextButton;
+    
+
+
+
 
 
 
@@ -91,6 +95,8 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->BackButton = (gcnew System::Windows::Forms::Button());
+			this->NextButton = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->panel1->SuspendLayout();
 			this->SuspendLayout();
@@ -104,7 +110,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 				static_cast<System::Byte>(0)));
 			this->label10->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			this->label10->Location = System::Drawing::Point(165, 144);
+			this->label10->Location = System::Drawing::Point(73, 118);
 			this->label10->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(1201, 64);
@@ -126,12 +132,12 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->dataGridView1->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->EnableHeadersVisualStyles = false;
-			this->dataGridView1->Location = System::Drawing::Point(165, 261);
+			this->dataGridView1->Location = System::Drawing::Point(73, 215);
 			this->dataGridView1->Margin = System::Windows::Forms::Padding(2);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(1201, 462);
+			this->dataGridView1->Size = System::Drawing::Size(1201, 558);
 			this->dataGridView1->TabIndex = 46;
 			// 
 			// panel1
@@ -174,16 +180,47 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->label4->Text = L"CUSTOMERS DETAILS";
 			this->label4->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			// 
+			// BackButton
+			// 
+			this->BackButton->BackColor = System::Drawing::Color::Crimson;
+			this->BackButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->BackButton->ForeColor = System::Drawing::SystemColors::Control;
+			this->BackButton->Location = System::Drawing::Point(1350, 582);
+			this->BackButton->Margin = System::Windows::Forms::Padding(2);
+			this->BackButton->Name = L"BackButton";
+			this->BackButton->Size = System::Drawing::Size(159, 75);
+			this->BackButton->TabIndex = 62;
+			this->BackButton->Text = L"BACK";
+			this->BackButton->UseVisualStyleBackColor = false;
+			// 
+			// NextButton
+			// 
+			this->NextButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(185)));
+			this->NextButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->NextButton->ForeColor = System::Drawing::SystemColors::Control;
+			this->NextButton->Location = System::Drawing::Point(1350, 682);
+			this->NextButton->Margin = System::Windows::Forms::Padding(2);
+			this->NextButton->Name = L"NextButton";
+			this->NextButton->Size = System::Drawing::Size(159, 75);
+			this->NextButton->TabIndex = 63;
+			this->NextButton->Text = L"NEXT";
+			this->NextButton->UseVisualStyleBackColor = false;
+			// 
 			// ViewDetails
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1548, 746);
+			this->ClientSize = System::Drawing::Size(1548, 881);
+			this->Controls->Add(this->NextButton);
+			this->Controls->Add(this->BackButton);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->label10);
 			this->Controls->Add(this->dataGridView1);
 			this->Name = L"ViewDetails";
-			this->Text = L"BookRoom";
+			this->Text = L"ViewDetails";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();

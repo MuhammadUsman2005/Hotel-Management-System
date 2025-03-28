@@ -1,4 +1,9 @@
 #pragma once
+#include "BookRooms.h"
+#include "CheckAvailability.h"
+#include "ViewDetails.h"
+#include "GenerateBills.h"
+#include "Login.h"
 
 namespace HOTELMANAGEMENTSYSTEM {
 
@@ -8,14 +13,14 @@ namespace HOTELMANAGEMENTSYSTEM {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-
+	using namespace HOTELMANAGEMENTSYSTEM;
 	/// <summary>
-	/// Summary for MyForm
+	/// Summary for Dashboard
 	/// </summary>
-	public ref class MainPage : public System::Windows::Forms::Form
+	public ref class Dashboard : public System::Windows::Forms::Form
 	{
 	public:
-		MainPage(void)
+		Dashboard(void)
 		{
 			InitializeComponent();
 			//
@@ -27,7 +32,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~MainPage()
+		~Dashboard()
 		{
 			if (components)
 			{
@@ -76,11 +81,18 @@ namespace HOTELMANAGEMENTSYSTEM {
 
 
 	private: System::Windows::Forms::PictureBox^ pictureBox6;
-	private: System::Windows::Forms::Button^ button4;
-	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::Button^ button2;
-	private: System::Windows::Forms::Button^ button3;
-	private: System::Windows::Forms::Button^ button5;
+	private: System::Windows::Forms::Button^ BookRoomsButton;
+
+	private: System::Windows::Forms::Button^ GenerateBillsButton;
+
+
+
+	private: System::Windows::Forms::Button^ ViewDetailsButton;
+	private: System::Windows::Forms::Button^ CheckAvailabilityButton;
+	private: System::Windows::Forms::Button^ LogoutButton;
+
+
+
 
 
 
@@ -97,7 +109,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MainPage::typeid));
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Dashboard::typeid));
 			this->panel7 = (gcnew System::Windows::Forms::Panel());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
@@ -106,12 +118,11 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox6 = (gcnew System::Windows::Forms::PictureBox());
-			this->button4 = (gcnew System::Windows::Forms::Button());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->button5 = (gcnew System::Windows::Forms::Button());
-			this->panel7->SuspendLayout();
+			this->BookRoomsButton = (gcnew System::Windows::Forms::Button());
+			this->GenerateBillsButton = (gcnew System::Windows::Forms::Button());
+			this->ViewDetailsButton = (gcnew System::Windows::Forms::Button());
+			this->CheckAvailabilityButton = (gcnew System::Windows::Forms::Button());
+			this->LogoutButton = (gcnew System::Windows::Forms::Button());
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
@@ -121,30 +132,17 @@ namespace HOTELMANAGEMENTSYSTEM {
 			// 
 			// panel7
 			// 
-			this->panel7->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
-				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			this->panel7->Controls->Add(this->label7);
-			this->panel7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->panel7->Location = System::Drawing::Point(-248, -102);
-			this->panel7->Margin = System::Windows::Forms::Padding(2);
+			this->panel7->Location = System::Drawing::Point(0, 0);
 			this->panel7->Name = L"panel7";
-			this->panel7->Size = System::Drawing::Size(1593, 95);
-			this->panel7->TabIndex = 23;
+			this->panel7->Size = System::Drawing::Size(200, 100);
+			this->panel7->TabIndex = 51;
 			// 
 			// label7
 			// 
-			this->label7->AutoSize = true;
-			this->label7->Font = (gcnew System::Drawing::Font(L"Century Gothic", 45, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label7->ForeColor = System::Drawing::Color::White;
-			this->label7->Location = System::Drawing::Point(2, 12);
-			this->label7->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label7->Location = System::Drawing::Point(0, 0);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(1570, 70);
+			this->label7->Size = System::Drawing::Size(100, 23);
 			this->label7->TabIndex = 0;
-			this->label7->Text = L" NED UNIVERSITY OF ENGINEERING AND TECHNOLOGY";
-			this->label7->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			// 
 			// panel1
 			// 
@@ -221,101 +219,103 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->pictureBox6->TabIndex = 40;
 			this->pictureBox6->TabStop = false;
 			// 
-			// button4
+			// BookRoomsButton
 			// 
-			this->button4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+			this->BookRoomsButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			this->button4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->BookRoomsButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button4->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->button4->Location = System::Drawing::Point(366, 360);
-			this->button4->Margin = System::Windows::Forms::Padding(2);
-			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(240, 57);
-			this->button4->TabIndex = 46;
-			this->button4->Text = L"BOOK ROOM";
-			this->button4->UseVisualStyleBackColor = false;
+			this->BookRoomsButton->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->BookRoomsButton->Location = System::Drawing::Point(366, 360);
+			this->BookRoomsButton->Margin = System::Windows::Forms::Padding(2);
+			this->BookRoomsButton->Name = L"BookRoomsButton";
+			this->BookRoomsButton->Size = System::Drawing::Size(240, 57);
+			this->BookRoomsButton->TabIndex = 46;
+			this->BookRoomsButton->Text = L"BOOK ROOM";
+			this->BookRoomsButton->UseVisualStyleBackColor = false;
+			this->BookRoomsButton->Click += gcnew System::EventHandler(this, &Dashboard::BookRoomsButton_Click);
 			// 
-			// button1
+			// GenerateBillsButton
 			// 
-			this->button1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
-				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			this->button1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->GenerateBillsButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)),
+				static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(185)));
+			this->GenerateBillsButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button1->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->button1->Location = System::Drawing::Point(873, 675);
-			this->button1->Margin = System::Windows::Forms::Padding(2);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(246, 57);
-			this->button1->TabIndex = 47;
-			this->button1->Text = L"GENERATE BILL";
-			this->button1->UseVisualStyleBackColor = false;
+			this->GenerateBillsButton->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->GenerateBillsButton->Location = System::Drawing::Point(873, 675);
+			this->GenerateBillsButton->Margin = System::Windows::Forms::Padding(2);
+			this->GenerateBillsButton->Name = L"GenerateBillsButton";
+			this->GenerateBillsButton->Size = System::Drawing::Size(246, 57);
+			this->GenerateBillsButton->TabIndex = 47;
+			this->GenerateBillsButton->Text = L"GENERATE BILL";
+			this->GenerateBillsButton->UseVisualStyleBackColor = false;
+			this->GenerateBillsButton->Click += gcnew System::EventHandler(this, &Dashboard::GenerateBillsButton_Click);
 			// 
-			// button2
+			// ViewDetailsButton
 			// 
-			this->button2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
-				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			this->button2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->ViewDetailsButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)),
+				static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(185)));
+			this->ViewDetailsButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button2->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->button2->Location = System::Drawing::Point(879, 360);
-			this->button2->Margin = System::Windows::Forms::Padding(2);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(240, 57);
-			this->button2->TabIndex = 48;
-			this->button2->Text = L"VIEW DETAILS";
-			this->button2->UseVisualStyleBackColor = false;
+			this->ViewDetailsButton->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->ViewDetailsButton->Location = System::Drawing::Point(879, 360);
+			this->ViewDetailsButton->Margin = System::Windows::Forms::Padding(2);
+			this->ViewDetailsButton->Name = L"ViewDetailsButton";
+			this->ViewDetailsButton->Size = System::Drawing::Size(240, 57);
+			this->ViewDetailsButton->TabIndex = 48;
+			this->ViewDetailsButton->Text = L"VIEW DETAILS";
+			this->ViewDetailsButton->UseVisualStyleBackColor = false;
+			this->ViewDetailsButton->Click += gcnew System::EventHandler(this, &Dashboard::ViewDetailsButton_Click);
 			// 
-			// button3
+			// CheckAvailabilityButton
 			// 
-			this->button3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
-				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			this->button3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->CheckAvailabilityButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)),
+				static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(185)));
+			this->CheckAvailabilityButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button3->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->button3->Location = System::Drawing::Point(366, 675);
-			this->button3->Margin = System::Windows::Forms::Padding(2);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(246, 57);
-			this->button3->TabIndex = 49;
-			this->button3->Text = L"CHECK AVAILABILITY";
-			this->button3->UseVisualStyleBackColor = false;
+			this->CheckAvailabilityButton->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->CheckAvailabilityButton->Location = System::Drawing::Point(366, 675);
+			this->CheckAvailabilityButton->Margin = System::Windows::Forms::Padding(2);
+			this->CheckAvailabilityButton->Name = L"CheckAvailabilityButton";
+			this->CheckAvailabilityButton->Size = System::Drawing::Size(246, 57);
+			this->CheckAvailabilityButton->TabIndex = 49;
+			this->CheckAvailabilityButton->Text = L"CHECK AVAILABILITY";
+			this->CheckAvailabilityButton->UseVisualStyleBackColor = false;
+			this->CheckAvailabilityButton->Click += gcnew System::EventHandler(this, &Dashboard::CheckAvailabilityButton_Click);
 			// 
-			// button5
+			// LogoutButton
 			// 
-			this->button5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
-				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			this->button5->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->LogoutButton->BackColor = System::Drawing::Color::Crimson;
+			this->LogoutButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button5->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->button5->Location = System::Drawing::Point(1282, 146);
-			this->button5->Margin = System::Windows::Forms::Padding(2);
-			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(139, 60);
-			this->button5->TabIndex = 50;
-			this->button5->Text = L"LOGOUT";
-			this->button5->UseVisualStyleBackColor = false;
+			this->LogoutButton->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->LogoutButton->Location = System::Drawing::Point(1282, 161);
+			this->LogoutButton->Margin = System::Windows::Forms::Padding(2);
+			this->LogoutButton->Name = L"LogoutButton";
+			this->LogoutButton->Size = System::Drawing::Size(139, 60);
+			this->LogoutButton->TabIndex = 50;
+			this->LogoutButton->Text = L"LOGOUT";
+			this->LogoutButton->UseVisualStyleBackColor = false;
+			this->LogoutButton->Click += gcnew System::EventHandler(this, &Dashboard::LogoutButton_Click);
 			// 
-			// MainPage
+			// Dashboard
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1604, 817);
-			this->Controls->Add(this->button5);
-			this->Controls->Add(this->button3);
-			this->Controls->Add(this->button2);
-			this->Controls->Add(this->button1);
-			this->Controls->Add(this->button4);
+			this->Controls->Add(this->LogoutButton);
+			this->Controls->Add(this->CheckAvailabilityButton);
+			this->Controls->Add(this->ViewDetailsButton);
+			this->Controls->Add(this->GenerateBillsButton);
+			this->Controls->Add(this->BookRoomsButton);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->pictureBox6);
 			this->Controls->Add(this->pictureBox5);
 			this->Controls->Add(this->pictureBox2);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->panel7);
-			this->Name = L"MainPage";
-			this->Text = L"MyForm";
-			this->panel7->ResumeLayout(false);
-			this->panel7->PerformLayout();
+			this->Name = L"Dashboard";
+			this->Text = L"Dashboard";
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->EndInit();
@@ -326,6 +326,19 @@ namespace HOTELMANAGEMENTSYSTEM {
 
 		}
 #pragma endregion
+
+		/* Yahan maine dashboard wale forms par saare buttons k event handlers banaye hain.
+		 In sab buttons ki implementation Dashboard.cpp file mein likhi hai */
+
+		void BookRoomsButton_Click(System::Object^ sender, System::EventArgs^ e);
+
+		void ViewDetailsButton_Click(System::Object^ sender, System::EventArgs^ e);
+
+		void CheckAvailabilityButton_Click(System::Object^ sender, System::EventArgs^ e);
+
+		void GenerateBillsButton_Click(System::Object^ sender, System::EventArgs^ e);
+		
+		void LogoutButton_Click(System::Object^ sender, System::EventArgs^ e); 
 
 };
 }

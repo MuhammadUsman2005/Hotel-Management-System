@@ -39,13 +39,17 @@ namespace HOTELMANAGEMENTSYSTEM {
 	private: System::Windows::Forms::TextBox^ textBox2;
 	private: System::Windows::Forms::Label^ label12;
 	private: System::Windows::Forms::Label^ label11;
+	private: System::Windows::Forms::Button^ NextButton;
 
-	private: System::Windows::Forms::Button^ button4;
-	private: System::Windows::Forms::Button^ button3;
-	private: System::Windows::Forms::Button^ button2;
-	private: System::Windows::Forms::Button^ button1;
 
-	private: System::Windows::Forms::ComboBox^ comboBox2;
+	private: System::Windows::Forms::Button^ DeleteButton;
+
+	private: System::Windows::Forms::Button^ AddButton;
+	private: System::Windows::Forms::Button^ HomeButton;
+
+
+
+
 
 	private: System::Windows::Forms::TextBox^ textBox7;
 	private: System::Windows::Forms::Label^ label9;
@@ -55,7 +59,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 
 
 	private: System::Windows::Forms::Label^ label4;
-	private: System::Windows::Forms::TextBox^ textBox1;
+
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
 
@@ -71,14 +75,20 @@ namespace HOTELMANAGEMENTSYSTEM {
 
 	private: System::Windows::Forms::Label^ label8;
 	private: System::Windows::Forms::Panel^ panel1;
-	private: System::Windows::Forms::ComboBox^ comboBox1;
+
 	private: System::Windows::Forms::TextBox^ textBox6;
 	private: System::Windows::Forms::Label^ label10;
-	private: System::Windows::Forms::ComboBox^ comboBox3;
+
 	private: System::Windows::Forms::Label^ label13;
-	private: System::Windows::Forms::ComboBox^ comboBox4;
+
 	private: System::Windows::Forms::Label^ label14;
 	private: System::Windows::Forms::DateTimePicker^ dateTimePicker1;
+	private: System::Windows::Forms::ComboBox^ comboBox4;
+	private: System::Windows::Forms::ComboBox^ comboBox3;
+	private: System::Windows::Forms::ComboBox^ comboBox2;
+	private: System::Windows::Forms::ComboBox^ comboBox1;
+	private: System::Windows::Forms::ComboBox^ comboBox5;
+
 
 
 	private:
@@ -99,17 +109,15 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->label12 = (gcnew System::Windows::Forms::Label());
 			this->label11 = (gcnew System::Windows::Forms::Label());
-			this->button4 = (gcnew System::Windows::Forms::Button());
-			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
+			this->NextButton = (gcnew System::Windows::Forms::Button());
+			this->DeleteButton = (gcnew System::Windows::Forms::Button());
+			this->AddButton = (gcnew System::Windows::Forms::Button());
+			this->HomeButton = (gcnew System::Windows::Forms::Button());
 			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
@@ -119,14 +127,16 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
 			this->label10 = (gcnew System::Windows::Forms::Label());
-			this->comboBox3 = (gcnew System::Windows::Forms::ComboBox());
 			this->label13 = (gcnew System::Windows::Forms::Label());
-			this->comboBox4 = (gcnew System::Windows::Forms::ComboBox());
 			this->label14 = (gcnew System::Windows::Forms::Label());
 			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
+			this->comboBox4 = (gcnew System::Windows::Forms::ComboBox());
+			this->comboBox3 = (gcnew System::Windows::Forms::ComboBox());
+			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
+			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+			this->comboBox5 = (gcnew System::Windows::Forms::ComboBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->panel1->SuspendLayout();
 			this->SuspendLayout();
@@ -180,78 +190,65 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->label11->TabIndex = 46;
 			this->label11->Text = L"PHONE NUMBER";
 			// 
-			// button4
+			// NextButton
 			// 
-			this->button4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+			this->NextButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			this->button4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->NextButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button4->ForeColor = System::Drawing::SystemColors::Control;
-			this->button4->Location = System::Drawing::Point(1325, 683);
-			this->button4->Margin = System::Windows::Forms::Padding(2);
-			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(159, 75);
-			this->button4->TabIndex = 44;
-			this->button4->Text = L"HOME";
-			this->button4->UseVisualStyleBackColor = false;
+			this->NextButton->ForeColor = System::Drawing::SystemColors::Control;
+			this->NextButton->Location = System::Drawing::Point(1325, 683);
+			this->NextButton->Margin = System::Windows::Forms::Padding(2);
+			this->NextButton->Name = L"NextButton";
+			this->NextButton->Size = System::Drawing::Size(159, 75);
+			this->NextButton->TabIndex = 44;
+			this->NextButton->Text = L"NEXT";
+			this->NextButton->UseVisualStyleBackColor = false;
 			// 
-			// button3
+			// DeleteButton
 			// 
-			this->button3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+			this->DeleteButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			this->button3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->DeleteButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button3->ForeColor = System::Drawing::SystemColors::Control;
-			this->button3->Location = System::Drawing::Point(1103, 683);
-			this->button3->Margin = System::Windows::Forms::Padding(2);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(159, 75);
-			this->button3->TabIndex = 43;
-			this->button3->Text = L"DELETE";
-			this->button3->UseVisualStyleBackColor = false;
+			this->DeleteButton->ForeColor = System::Drawing::SystemColors::Control;
+			this->DeleteButton->Location = System::Drawing::Point(881, 683);
+			this->DeleteButton->Margin = System::Windows::Forms::Padding(2);
+			this->DeleteButton->Name = L"DeleteButton";
+			this->DeleteButton->Size = System::Drawing::Size(159, 75);
+			this->DeleteButton->TabIndex = 43;
+			this->DeleteButton->Text = L"DELETE";
+			this->DeleteButton->UseVisualStyleBackColor = false;
 			// 
-			// button2
+			// AddButton
 			// 
-			this->button2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+			this->AddButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			this->button2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->AddButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button2->ForeColor = System::Drawing::SystemColors::Control;
-			this->button2->Location = System::Drawing::Point(651, 683);
-			this->button2->Margin = System::Windows::Forms::Padding(2);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(159, 75);
-			this->button2->TabIndex = 42;
-			this->button2->Text = L"ADD";
-			this->button2->UseVisualStyleBackColor = false;
+			this->AddButton->ForeColor = System::Drawing::SystemColors::Control;
+			this->AddButton->Location = System::Drawing::Point(651, 683);
+			this->AddButton->Margin = System::Windows::Forms::Padding(2);
+			this->AddButton->Name = L"AddButton";
+			this->AddButton->Size = System::Drawing::Size(159, 75);
+			this->AddButton->TabIndex = 42;
+			this->AddButton->Text = L"ADD";
+			this->AddButton->UseVisualStyleBackColor = false;
 			// 
-			// button1
+			// HomeButton
 			// 
-			this->button1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+			this->HomeButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			this->button1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->HomeButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button1->ForeColor = System::Drawing::SystemColors::Control;
-			this->button1->Location = System::Drawing::Point(878, 683);
-			this->button1->Margin = System::Windows::Forms::Padding(2);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(159, 75);
-			this->button1->TabIndex = 41;
-			this->button1->Text = L"EDIT";
-			this->button1->UseVisualStyleBackColor = false;
-			// 
-			// comboBox2
-			// 
-			this->comboBox2->AllowDrop = true;
-			this->comboBox2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->comboBox2->FormattingEnabled = true;
-			this->comboBox2->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"MALE", L"FEMALE" });
-			this->comboBox2->Location = System::Drawing::Point(217, 337);
-			this->comboBox2->Margin = System::Windows::Forms::Padding(2);
-			this->comboBox2->Name = L"comboBox2";
-			this->comboBox2->Size = System::Drawing::Size(308, 30);
-			this->comboBox2->TabIndex = 39;
+			this->HomeButton->ForeColor = System::Drawing::SystemColors::Control;
+			this->HomeButton->Location = System::Drawing::Point(1104, 683);
+			this->HomeButton->Margin = System::Windows::Forms::Padding(2);
+			this->HomeButton->Name = L"HomeButton";
+			this->HomeButton->Size = System::Drawing::Size(159, 75);
+			this->HomeButton->TabIndex = 41;
+			this->HomeButton->Text = L"HOME";
+			this->HomeButton->UseVisualStyleBackColor = false;
 			// 
 			// textBox7
 			// 
@@ -318,17 +315,6 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->label4->Size = System::Drawing::Size(131, 26);
 			this->label4->TabIndex = 30;
 			this->label4->Text = L"FIRST NAME";
-			// 
-			// textBox1
-			// 
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->textBox1->Location = System::Drawing::Point(217, 94);
-			this->textBox1->Margin = System::Windows::Forms::Padding(2);
-			this->textBox1->Multiline = true;
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(308, 32);
-			this->textBox1->TabIndex = 29;
 			// 
 			// label3
 			// 
@@ -458,22 +444,6 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->panel1->Size = System::Drawing::Size(1528, 79);
 			this->panel1->TabIndex = 51;
 			// 
-			// comboBox1
-			// 
-			this->comboBox1->AllowDrop = true;
-			this->comboBox1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(8) {
-				L"PAKISTAN", L"INDIA", L"BANGLADESH", L"SRI LANKA",
-					L"AFGHANISTAN", L"ENGLAND", L"CHINA", L"OTHER"
-			});
-			this->comboBox1->Location = System::Drawing::Point(217, 271);
-			this->comboBox1->Margin = System::Windows::Forms::Padding(2);
-			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(308, 30);
-			this->comboBox1->TabIndex = 55;
-			// 
 			// textBox6
 			// 
 			this->textBox6->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
@@ -499,19 +469,6 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->label10->TabIndex = 57;
 			this->label10->Text = L"LAST NAME";
 			// 
-			// comboBox3
-			// 
-			this->comboBox3->AllowDrop = true;
-			this->comboBox3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->comboBox3->FormattingEnabled = true;
-			this->comboBox3->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"SUITE ($ 200.0)", L"DELUXE ($ 150.0)", L"STANDARD ($ 100.0)" });
-			this->comboBox3->Location = System::Drawing::Point(217, 402);
-			this->comboBox3->Margin = System::Windows::Forms::Padding(2);
-			this->comboBox3->Name = L"comboBox3";
-			this->comboBox3->Size = System::Drawing::Size(308, 30);
-			this->comboBox3->TabIndex = 58;
-			// 
 			// label13
 			// 
 			this->label13->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
@@ -524,22 +481,6 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->label13->Size = System::Drawing::Size(136, 32);
 			this->label13->TabIndex = 59;
 			this->label13->Text = L"ROOM NO";
-			// 
-			// comboBox4
-			// 
-			this->comboBox4->AllowDrop = true;
-			this->comboBox4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->comboBox4->FormattingEnabled = true;
-			this->comboBox4->Items->AddRange(gcnew cli::array< System::Object^  >(8) {
-				L"101 - DELUXE", L"102 - DELUXE", L"103 - SUITE",
-					L"104 - SUITE", L"105 - SUITE", L"106 - STANDARD", L"107 - STANDARD", L"108 - STANDARD"
-			});
-			this->comboBox4->Location = System::Drawing::Point(217, 464);
-			this->comboBox4->Margin = System::Windows::Forms::Padding(2);
-			this->comboBox4->Name = L"comboBox4";
-			this->comboBox4->Size = System::Drawing::Size(308, 30);
-			this->comboBox4->TabIndex = 60;
 			// 
 			// label14
 			// 
@@ -557,7 +498,6 @@ namespace HOTELMANAGEMENTSYSTEM {
 			// 
 			// dateTimePicker1
 			// 
-			this->dateTimePicker1->AllowDrop = true;
 			this->dateTimePicker1->CalendarFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->dateTimePicker1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular,
@@ -567,11 +507,81 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->dateTimePicker1->Size = System::Drawing::Size(308, 29);
 			this->dateTimePicker1->TabIndex = 62;
 			// 
+			// comboBox4
+			// 
+			this->comboBox4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->comboBox4->FormattingEnabled = true;
+			this->comboBox4->Items->AddRange(gcnew cli::array< System::Object^  >(8) {
+				L"101 - DELUXE", L"102 - DELUXE", L"103 - SUITE",
+					L"104 - SUITE", L"105 - SUITE", L"106 - STANDARD", L"107 - STANDARD", L"108 - STANDARD"
+			});
+			this->comboBox4->Location = System::Drawing::Point(217, 464);
+			this->comboBox4->Margin = System::Windows::Forms::Padding(2);
+			this->comboBox4->Name = L"comboBox4";
+			this->comboBox4->Size = System::Drawing::Size(308, 30);
+			this->comboBox4->TabIndex = 60;
+			// 
+			// comboBox3
+			// 
+			this->comboBox3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->comboBox3->FormattingEnabled = true;
+			this->comboBox3->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"SUITE ($ 200.0)", L"DELUXE ($ 150.0)", L"STANDARD ($ 100.0)" });
+			this->comboBox3->Location = System::Drawing::Point(217, 402);
+			this->comboBox3->Margin = System::Windows::Forms::Padding(2);
+			this->comboBox3->Name = L"comboBox3";
+			this->comboBox3->Size = System::Drawing::Size(308, 30);
+			this->comboBox3->TabIndex = 58;
+			// 
+			// comboBox2
+			// 
+			this->comboBox2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->comboBox2->FormattingEnabled = true;
+			this->comboBox2->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"MALE", L"FEMALE" });
+			this->comboBox2->Location = System::Drawing::Point(217, 337);
+			this->comboBox2->Margin = System::Windows::Forms::Padding(2);
+			this->comboBox2->Name = L"comboBox2";
+			this->comboBox2->Size = System::Drawing::Size(308, 30);
+			this->comboBox2->TabIndex = 39;
+			// 
+			// comboBox1
+			// 
+			this->comboBox1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->comboBox1->FormattingEnabled = true;
+			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(8) {
+				L"PAKISTAN", L"INDIA", L"BANGLADESH", L"SRI LANKA",
+					L"AFGHANISTAN", L"ENGLAND", L"CHINA", L"OTHER"
+			});
+			this->comboBox1->Location = System::Drawing::Point(217, 271);
+			this->comboBox1->Margin = System::Windows::Forms::Padding(2);
+			this->comboBox1->Name = L"comboBox1";
+			this->comboBox1->Size = System::Drawing::Size(308, 30);
+			this->comboBox1->TabIndex = 55;
+			// 
+			// comboBox5
+			// 
+			this->comboBox5->Font = (gcnew System::Drawing::Font(L"Century Gothic", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->comboBox5->FormattingEnabled = true;
+			this->comboBox5->Items->AddRange(gcnew cli::array< System::Object^  >(8) {
+				L"01", L"02", L"03", L"04", L"05", L"06", L"07",
+					L"08"
+			});
+			this->comboBox5->Location = System::Drawing::Point(217, 96);
+			this->comboBox5->Margin = System::Windows::Forms::Padding(2);
+			this->comboBox5->Name = L"comboBox5";
+			this->comboBox5->Size = System::Drawing::Size(308, 30);
+			this->comboBox5->TabIndex = 63;
+			// 
 			// BookRooms
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1528, 783);
+			this->Controls->Add(this->comboBox5);
 			this->Controls->Add(this->dateTimePicker1);
 			this->Controls->Add(this->label14);
 			this->Controls->Add(this->comboBox4);
@@ -588,10 +598,10 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->Controls->Add(this->textBox2);
 			this->Controls->Add(this->label12);
 			this->Controls->Add(this->label11);
-			this->Controls->Add(this->button4);
-			this->Controls->Add(this->button3);
-			this->Controls->Add(this->button2);
-			this->Controls->Add(this->button1);
+			this->Controls->Add(this->NextButton);
+			this->Controls->Add(this->DeleteButton);
+			this->Controls->Add(this->AddButton);
+			this->Controls->Add(this->HomeButton);
 			this->Controls->Add(this->comboBox2);
 			this->Controls->Add(this->textBox7);
 			this->Controls->Add(this->label9);
@@ -600,7 +610,6 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->Controls->Add(this->textBox3);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->label4);
-			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->label3);
 			this->Name = L"BookRooms";
 			this->Text = L"BookRooms";

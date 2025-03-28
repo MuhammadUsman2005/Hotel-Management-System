@@ -57,6 +57,10 @@ namespace HOTELMANAGEMENTSYSTEM {
 	private: System::Windows::Forms::Label^ label13;
 	private: System::Windows::Forms::Label^ label16;
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
+	private: System::Windows::Forms::Button^ BackButton;
+	private: System::Windows::Forms::Button^ NextButton;
+
+
 
 	private:
 		/// <summary>
@@ -75,29 +79,31 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
-			this->label10 = (gcnew System::Windows::Forms::Label());
-			this->panel3 = (gcnew System::Windows::Forms::Panel());
-			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->panel4 = (gcnew System::Windows::Forms::Panel());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->label15 = (gcnew System::Windows::Forms::Label());
+			this->label14 = (gcnew System::Windows::Forms::Label());
+			this->label13 = (gcnew System::Windows::Forms::Label());
+			this->label12 = (gcnew System::Windows::Forms::Label());
+			this->label11 = (gcnew System::Windows::Forms::Label());
+			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->panel5 = (gcnew System::Windows::Forms::Panel());
 			this->label7 = (gcnew System::Windows::Forms::Label());
-			this->label9 = (gcnew System::Windows::Forms::Label());
-			this->label11 = (gcnew System::Windows::Forms::Label());
-			this->label12 = (gcnew System::Windows::Forms::Label());
-			this->label13 = (gcnew System::Windows::Forms::Label());
-			this->label14 = (gcnew System::Windows::Forms::Label());
-			this->label15 = (gcnew System::Windows::Forms::Label());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->panel4 = (gcnew System::Windows::Forms::Panel());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->panel3 = (gcnew System::Windows::Forms::Panel());
+			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->label16 = (gcnew System::Windows::Forms::Label());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->BackButton = (gcnew System::Windows::Forms::Button());
+			this->NextButton = (gcnew System::Windows::Forms::Button());
 			this->panel1->SuspendLayout();
 			this->panel2->SuspendLayout();
-			this->panel3->SuspendLayout();
-			this->panel4->SuspendLayout();
 			this->panel5->SuspendLayout();
+			this->panel4->SuspendLayout();
+			this->panel3->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -157,123 +163,100 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->panel2->Controls->Add(this->panel4);
 			this->panel2->Controls->Add(this->panel3);
 			this->panel2->Controls->Add(this->label10);
-			this->panel2->Location = System::Drawing::Point(27, 133);
+			this->panel2->Location = System::Drawing::Point(25, 109);
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(784, 623);
 			this->panel2->TabIndex = 85;
 			// 
-			// label10
+			// label15
 			// 
-			this->label10->AutoSize = true;
-			this->label10->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
-				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			this->label10->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->label10->Font = (gcnew System::Drawing::Font(L"Century Gothic", 39, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label15->AutoSize = true;
+			this->label15->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->label15->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label10->ForeColor = System::Drawing::Color::White;
-			this->label10->Location = System::Drawing::Point(20, 29);
-			this->label10->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(741, 64);
-			this->label10->TabIndex = 48;
-			this->label10->Text = L"TOTAL ROOMS IN OUR HOTEL";
-			// 
-			// panel3
-			// 
-			this->panel3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+			this->label15->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			this->panel3->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->panel3->Controls->Add(this->label6);
-			this->panel3->Location = System::Drawing::Point(20, 148);
-			this->panel3->Margin = System::Windows::Forms::Padding(2);
-			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(174, 53);
-			this->panel3->TabIndex = 56;
+			this->label15->Location = System::Drawing::Point(581, 510);
+			this->label15->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label15->Name = L"label15";
+			this->label15->Size = System::Drawing::Size(141, 38);
+			this->label15->TabIndex = 72;
+			this->label15->Text = L"106 - 108";
 			// 
-			// label6
+			// label14
 			// 
-			this->label6->BackColor = System::Drawing::Color::Transparent;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Century Gothic", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label14->AutoSize = true;
+			this->label14->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->label14->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label6->ForeColor = System::Drawing::Color::White;
-			this->label6->Location = System::Drawing::Point(-1, 9);
-			this->label6->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(171, 26);
-			this->label6->TabIndex = 37;
-			this->label6->Text = L"ROOM TYPE";
-			this->label6->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// panel4
-			// 
-			this->panel4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(48)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+			this->label14->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			this->panel4->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->panel4->Controls->Add(this->label1);
-			this->panel4->Location = System::Drawing::Point(524, 148);
-			this->panel4->Margin = System::Windows::Forms::Padding(2);
-			this->panel4->Name = L"panel4";
-			this->panel4->Size = System::Drawing::Size(237, 53);
-			this->panel4->TabIndex = 57;
+			this->label14->Location = System::Drawing::Point(581, 386);
+			this->label14->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label14->Name = L"label14";
+			this->label14->Size = System::Drawing::Size(141, 38);
+			this->label14->TabIndex = 71;
+			this->label14->Text = L"103 - 105";
 			// 
-			// label1
+			// label13
 			// 
-			this->label1->BackColor = System::Drawing::Color::Transparent;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label13->AutoSize = true;
+			this->label13->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->label13->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->ForeColor = System::Drawing::Color::White;
-			this->label1->Location = System::Drawing::Point(-1, 9);
-			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(234, 26);
-			this->label1->TabIndex = 37;
-			this->label1->Text = L"ROOM NUMBER";
-			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// label3
-			// 
-			this->label3->AutoSize = true;
-			this->label3->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+			this->label13->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			this->label3->Location = System::Drawing::Point(46, 271);
-			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(86, 38);
-			this->label3->TabIndex = 64;
-			this->label3->Text = L"SUITE";
+			this->label13->Location = System::Drawing::Point(581, 271);
+			this->label13->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label13->Name = L"label13";
+			this->label13->Size = System::Drawing::Size(141, 38);
+			this->label13->TabIndex = 70;
+			this->label13->Text = L"101 - 102";
 			// 
-			// label4
+			// label12
 			// 
-			this->label4->AutoSize = true;
-			this->label4->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label12->AutoSize = true;
+			this->label12->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->label12->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+			this->label12->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			this->label4->Location = System::Drawing::Point(46, 386);
-			this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(119, 38);
-			this->label4->TabIndex = 65;
-			this->label4->Text = L"DELUXE";
+			this->label12->Location = System::Drawing::Point(307, 510);
+			this->label12->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label12->Name = L"label12";
+			this->label12->Size = System::Drawing::Size(89, 38);
+			this->label12->TabIndex = 69;
+			this->label12->Text = L"$ 100";
 			// 
-			// label5
+			// label11
 			// 
-			this->label5->AutoSize = true;
-			this->label5->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->label5->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label11->AutoSize = true;
+			this->label11->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->label11->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+			this->label11->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			this->label5->Location = System::Drawing::Point(46, 510);
-			this->label5->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(164, 38);
-			this->label5->TabIndex = 66;
-			this->label5->Text = L"STANDARD";
+			this->label11->Location = System::Drawing::Point(307, 386);
+			this->label11->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label11->Name = L"label11";
+			this->label11->Size = System::Drawing::Size(89, 38);
+			this->label11->TabIndex = 68;
+			this->label11->Text = L"$ 150";
+			// 
+			// label9
+			// 
+			this->label9->AutoSize = true;
+			this->label9->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->label9->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label9->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(185)));
+			this->label9->Location = System::Drawing::Point(307, 271);
+			this->label9->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(97, 38);
+			this->label9->TabIndex = 67;
+			this->label9->Text = L" $ 200";
 			// 
 			// panel5
 			// 
@@ -302,95 +285,118 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->label7->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			this->label7->Click += gcnew System::EventHandler(this, &CheckAvailability::label7_Click);
 			// 
-			// label9
+			// label5
 			// 
-			this->label9->AutoSize = true;
-			this->label9->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->label9->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label5->AutoSize = true;
+			this->label5->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->label5->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label9->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+			this->label5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			this->label9->Location = System::Drawing::Point(307, 271);
-			this->label9->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(97, 38);
-			this->label9->TabIndex = 67;
-			this->label9->Text = L" $ 200";
+			this->label5->Location = System::Drawing::Point(46, 510);
+			this->label5->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(164, 38);
+			this->label5->TabIndex = 66;
+			this->label5->Text = L"STANDARD";
 			// 
-			// label11
+			// label4
 			// 
-			this->label11->AutoSize = true;
-			this->label11->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->label11->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label4->AutoSize = true;
+			this->label4->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label11->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+			this->label4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			this->label11->Location = System::Drawing::Point(307, 386);
-			this->label11->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(89, 38);
-			this->label11->TabIndex = 68;
-			this->label11->Text = L"$ 150";
+			this->label4->Location = System::Drawing::Point(46, 386);
+			this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(119, 38);
+			this->label4->TabIndex = 65;
+			this->label4->Text = L"DELUXE";
 			// 
-			// label12
+			// label3
 			// 
-			this->label12->AutoSize = true;
-			this->label12->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->label12->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label3->AutoSize = true;
+			this->label3->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label12->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+			this->label3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			this->label12->Location = System::Drawing::Point(307, 510);
-			this->label12->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(89, 38);
-			this->label12->TabIndex = 69;
-			this->label12->Text = L"$ 100";
+			this->label3->Location = System::Drawing::Point(46, 271);
+			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(86, 38);
+			this->label3->TabIndex = 64;
+			this->label3->Text = L"SUITE";
 			// 
-			// label13
+			// panel4
 			// 
-			this->label13->AutoSize = true;
-			this->label13->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->label13->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->panel4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(48)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(185)));
+			this->panel4->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->panel4->Controls->Add(this->label1);
+			this->panel4->Location = System::Drawing::Point(524, 148);
+			this->panel4->Margin = System::Windows::Forms::Padding(2);
+			this->panel4->Name = L"panel4";
+			this->panel4->Size = System::Drawing::Size(237, 53);
+			this->panel4->TabIndex = 57;
+			// 
+			// label1
+			// 
+			this->label1->BackColor = System::Drawing::Color::Transparent;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label13->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+			this->label1->ForeColor = System::Drawing::Color::White;
+			this->label1->Location = System::Drawing::Point(-1, 9);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(234, 26);
+			this->label1->TabIndex = 37;
+			this->label1->Text = L"ROOM NUMBER";
+			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// panel3
+			// 
+			this->panel3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			this->label13->Location = System::Drawing::Point(581, 271);
-			this->label13->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->label13->Name = L"label13";
-			this->label13->Size = System::Drawing::Size(141, 38);
-			this->label13->TabIndex = 70;
-			this->label13->Text = L"101 - 102";
+			this->panel3->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->panel3->Controls->Add(this->label6);
+			this->panel3->Location = System::Drawing::Point(20, 148);
+			this->panel3->Margin = System::Windows::Forms::Padding(2);
+			this->panel3->Name = L"panel3";
+			this->panel3->Size = System::Drawing::Size(174, 53);
+			this->panel3->TabIndex = 56;
 			// 
-			// label14
+			// label6
 			// 
-			this->label14->AutoSize = true;
-			this->label14->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->label14->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label6->BackColor = System::Drawing::Color::Transparent;
+			this->label6->Font = (gcnew System::Drawing::Font(L"Century Gothic", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label14->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+			this->label6->ForeColor = System::Drawing::Color::White;
+			this->label6->Location = System::Drawing::Point(-1, 9);
+			this->label6->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(171, 26);
+			this->label6->TabIndex = 37;
+			this->label6->Text = L"ROOM TYPE";
+			this->label6->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// label10
+			// 
+			this->label10->AutoSize = true;
+			this->label10->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			this->label14->Location = System::Drawing::Point(581, 386);
-			this->label14->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->label14->Name = L"label14";
-			this->label14->Size = System::Drawing::Size(141, 38);
-			this->label14->TabIndex = 71;
-			this->label14->Text = L"103 - 105";
-			// 
-			// label15
-			// 
-			this->label15->AutoSize = true;
-			this->label15->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->label15->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label10->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->label10->Font = (gcnew System::Drawing::Font(L"Century Gothic", 39, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label15->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
-				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			this->label15->Location = System::Drawing::Point(581, 510);
-			this->label15->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->label15->Name = L"label15";
-			this->label15->Size = System::Drawing::Size(141, 38);
-			this->label15->TabIndex = 72;
-			this->label15->Text = L"106 - 108";
+			this->label10->ForeColor = System::Drawing::Color::White;
+			this->label10->Location = System::Drawing::Point(20, 29);
+			this->label10->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label10->Name = L"label10";
+			this->label10->Size = System::Drawing::Size(741, 64);
+			this->label10->TabIndex = 48;
+			this->label10->Text = L"TOTAL ROOMS IN OUR HOTEL";
 			// 
 			// label16
 			// 
@@ -401,7 +407,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 				static_cast<System::Byte>(0)));
 			this->label16->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			this->label16->Location = System::Drawing::Point(836, 133);
+			this->label16->Location = System::Drawing::Point(836, 109);
 			this->label16->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label16->Name = L"label16";
 			this->label16->Size = System::Drawing::Size(740, 64);
@@ -411,16 +417,48 @@ namespace HOTELMANAGEMENTSYSTEM {
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(836, 232);
+			this->dataGridView1->Location = System::Drawing::Point(836, 208);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->Size = System::Drawing::Size(740, 524);
 			this->dataGridView1->TabIndex = 86;
+			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &CheckAvailability::dataGridView1_CellContentClick);
+			// 
+			// BackButton
+			// 
+			this->BackButton->BackColor = System::Drawing::Color::Crimson;
+			this->BackButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->BackButton->ForeColor = System::Drawing::SystemColors::Control;
+			this->BackButton->Location = System::Drawing::Point(1200, 752);
+			this->BackButton->Margin = System::Windows::Forms::Padding(2);
+			this->BackButton->Name = L"BackButton";
+			this->BackButton->Size = System::Drawing::Size(159, 75);
+			this->BackButton->TabIndex = 87;
+			this->BackButton->Text = L"BACK";
+			this->BackButton->UseVisualStyleBackColor = false;
+			// 
+			// NextButton
+			// 
+			this->NextButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(185)));
+			this->NextButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->NextButton->ForeColor = System::Drawing::SystemColors::Control;
+			this->NextButton->Location = System::Drawing::Point(1417, 752);
+			this->NextButton->Margin = System::Windows::Forms::Padding(2);
+			this->NextButton->Name = L"NextButton";
+			this->NextButton->Size = System::Drawing::Size(159, 75);
+			this->NextButton->TabIndex = 88;
+			this->NextButton->Text = L"NEXT";
+			this->NextButton->UseVisualStyleBackColor = false;
 			// 
 			// CheckAvailability
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1604, 790);
+			this->ClientSize = System::Drawing::Size(1604, 881);
+			this->Controls->Add(this->NextButton);
+			this->Controls->Add(this->BackButton);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->label16);
 			this->Controls->Add(this->panel2);
@@ -432,9 +470,9 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->panel1->PerformLayout();
 			this->panel2->ResumeLayout(false);
 			this->panel2->PerformLayout();
-			this->panel3->ResumeLayout(false);
-			this->panel4->ResumeLayout(false);
 			this->panel5->ResumeLayout(false);
+			this->panel4->ResumeLayout(false);
+			this->panel3->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -444,6 +482,8 @@ namespace HOTELMANAGEMENTSYSTEM {
 	private: System::Void label7_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 private: System::Void CheckAvailability_Load(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 }
 };
 }

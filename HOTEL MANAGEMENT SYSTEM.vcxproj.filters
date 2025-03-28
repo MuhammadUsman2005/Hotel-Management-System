@@ -18,10 +18,7 @@
     <ClCompile Include="Login.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MainPage.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="BookRooms.cpp">
+    <ClCompile Include="Dashboard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CheckAvailability.cpp">
@@ -30,12 +27,18 @@
     <ClCompile Include="GenerateBills.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="BookRooms.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewDetails.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Login.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MainPage.h">
+    <ClInclude Include="Dashboard.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="BookRooms.h">

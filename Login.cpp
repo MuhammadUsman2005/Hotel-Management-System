@@ -1,5 +1,5 @@
 #include "Login.h"
-#include "MainPage.h"
+#include "Dashboard.h"
 #include <string>
 
 
@@ -36,8 +36,9 @@ void Login::CheckLogin(System::Object^ sender, System::EventArgs^ e)
         MessageBox::Show("Login Successful");
         this->Hide();
 
-        MainPage^ mainPage = gcnew MainPage();
-        mainPage->Show();
+
+        Dashboard^ dashboard = gcnew Dashboard();
+        dashboard->Show();
     }
 
     else 
