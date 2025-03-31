@@ -1,4 +1,12 @@
 #pragma once
+#include "BookRooms.h"
+#include "ViewDetails.h"
+#include "Login.h"
+#include "GenerateBills.h"
+#include "CheckAvailability.h"
+
+using namespace System::Data;
+using namespace System::Data::OleDb;
 
 namespace HOTELMANAGEMENTSYSTEM {
 
@@ -11,7 +19,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 
 	/// <summary>
 	/// Summary for BookRooms
-	/// </summary>
+	/// <summary>
 	public ref class BookRooms : public System::Windows::Forms::Form
 	{
 	public:
@@ -21,7 +29,9 @@ namespace HOTELMANAGEMENTSYSTEM {
 			//
 			//TODO: Add the constructor code here
 			//
+			
 		}
+
 
 	protected:
 		/// <summary>
@@ -61,7 +71,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 	private: System::Windows::Forms::Label^ label4;
 
 	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::DataGridView^ dataGridView1;
+
 
 
 
@@ -88,6 +98,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 	private: System::Windows::Forms::ComboBox^ comboBox2;
 	private: System::Windows::Forms::ComboBox^ comboBox1;
 	private: System::Windows::Forms::ComboBox^ comboBox5;
+	private: System::Windows::Forms::DataGridView^ dataGridView1;
 
 
 
@@ -95,7 +106,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -119,7 +130,6 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
@@ -137,8 +147,9 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->comboBox5 = (gcnew System::Windows::Forms::ComboBox());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->panel1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// textBox4
@@ -204,6 +215,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->NextButton->TabIndex = 44;
 			this->NextButton->Text = L"NEXT";
 			this->NextButton->UseVisualStyleBackColor = false;
+			this->NextButton->Click += gcnew System::EventHandler(this, &BookRooms::NextButton_Click_1);
 			// 
 			// DeleteButton
 			// 
@@ -219,6 +231,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->DeleteButton->TabIndex = 43;
 			this->DeleteButton->Text = L"DELETE";
 			this->DeleteButton->UseVisualStyleBackColor = false;
+			this->DeleteButton->Click += gcnew System::EventHandler(this, &BookRooms::DeleteButton_Click_1);
 			// 
 			// AddButton
 			// 
@@ -234,6 +247,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->AddButton->TabIndex = 42;
 			this->AddButton->Text = L"ADD";
 			this->AddButton->UseVisualStyleBackColor = false;
+			this->AddButton->Click += gcnew System::EventHandler(this, &BookRooms::AddButton_Click_1);
 			// 
 			// HomeButton
 			// 
@@ -249,6 +263,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->HomeButton->TabIndex = 41;
 			this->HomeButton->Text = L"HOME";
 			this->HomeButton->UseVisualStyleBackColor = false;
+			this->HomeButton->Click += gcnew System::EventHandler(this, &BookRooms::HomeButton_Click_1);
 			// 
 			// textBox7
 			// 
@@ -330,30 +345,6 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->label3->TabIndex = 28;
 			this->label3->Text = L"CUSTOMER ID";
 			// 
-			// dataGridView1
-			// 
-			this->dataGridView1->AllowUserToOrderColumns = true;
-			this->dataGridView1->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::AllCells;
-			this->dataGridView1->AutoSizeRowsMode = System::Windows::Forms::DataGridViewAutoSizeRowsMode::AllCells;
-			dataGridViewCellStyle1->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
-				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			dataGridViewCellStyle1->ForeColor = System::Drawing::Color::White;
-			dataGridViewCellStyle1->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-			dataGridViewCellStyle1->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle1->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->dataGridView1->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-			this->dataGridView1->EnableHeadersVisualStyles = false;
-			this->dataGridView1->Location = System::Drawing::Point(651, 109);
-			this->dataGridView1->Margin = System::Windows::Forms::Padding(2);
-			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->RowHeadersWidth = 90;
-			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(833, 539);
-			this->dataGridView1->TabIndex = 50;
-			// 
 			// textBox5
 			// 
 			this->textBox5->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
@@ -377,7 +368,6 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->label1->Size = System::Drawing::Size(136, 32);
 			this->label1->TabIndex = 54;
 			this->label1->Text = L"ROOM TYPE";
-			this->label1->Click += gcnew System::EventHandler(this, &BookRooms::label1_Click);
 			// 
 			// label5
 			// 
@@ -566,15 +556,42 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->comboBox5->Font = (gcnew System::Drawing::Font(L"Century Gothic", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->comboBox5->FormattingEnabled = true;
-			this->comboBox5->Items->AddRange(gcnew cli::array< System::Object^  >(8) {
-				L"01", L"02", L"03", L"04", L"05", L"06", L"07",
-					L"08"
+			this->comboBox5->Items->AddRange(gcnew cli::array< System::Object^  >(50) {
+				L"01  ", L"02  ", L"03  ", L"04  ", L"05  ", L"06  ",
+					L"07  ", L"08  ", L"09  ", L"10  ", L"11  ", L"12  ", L"13  ", L"14  ", L"15  ", L"16  ", L"17  ", L"18  ", L"19  ", L"20  ",
+					L"21  ", L"22  ", L"23  ", L"24  ", L"25  ", L"26  ", L"27  ", L"28  ", L"29  ", L"30  ", L"31  ", L"32  ", L"33  ", L"34  ",
+					L"35  ", L"36  ", L"37  ", L"38  ", L"39  ", L"40  ", L"41  ", L"42  ", L"43  ", L"44  ", L"45  ", L"46  ", L"47  ", L"48  ",
+					L"49  ", L"50  "
 			});
 			this->comboBox5->Location = System::Drawing::Point(217, 96);
 			this->comboBox5->Margin = System::Windows::Forms::Padding(2);
 			this->comboBox5->Name = L"comboBox5";
 			this->comboBox5->Size = System::Drawing::Size(308, 30);
 			this->comboBox5->TabIndex = 63;
+			// 
+			// dataGridView1
+			// 
+			this->dataGridView1->AllowUserToOrderColumns = true;
+			this->dataGridView1->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::AllCells;
+			this->dataGridView1->AutoSizeRowsMode = System::Windows::Forms::DataGridViewAutoSizeRowsMode::AllCells;
+			dataGridViewCellStyle1->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(185)));
+			dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			dataGridViewCellStyle1->ForeColor = System::Drawing::Color::White;
+			dataGridViewCellStyle1->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle1->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle1->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->dataGridView1->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+			this->dataGridView1->EnableHeadersVisualStyles = false;
+			this->dataGridView1->Location = System::Drawing::Point(651, 109);
+			this->dataGridView1->Margin = System::Windows::Forms::Padding(2);
+			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->RowHeadersWidth = 90;
+			this->dataGridView1->RowTemplate->Height = 24;
+			this->dataGridView1->Size = System::Drawing::Size(833, 539);
+			this->dataGridView1->TabIndex = 50;
 			// 
 			// BookRooms
 			// 
@@ -613,17 +630,67 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->Controls->Add(this->label3);
 			this->Name = L"BookRooms";
 			this->Text = L"BookRooms";
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
-
+			
 		}
 #pragma endregion
-	private: System::Void label8_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		/* Is file mein ooper top se (#pragma once) lekar neeche bottom (#pragma endregion) tak
+		jo code likha hua hai, ye Microsoft Visual Studio ka Automatically generated code hota hai,
+		yani jo UI hum tool-box se drag and drop k through design karte hain, usi ko Microsoft Visual
+		Studio apne aap hee se automatically, code mein convert kar deta hai.
+
+		Is liye #pragma once se lekar #pragma endregion tak ka code hamare samajhne k liye nahi hai, ye
+		just UI form k design ko automatically coding ki language mein convert kar deta hai.*/
+
+
+
+		// MUHAMMAD USMAN MASOOD
+		// CT-24239
+		// SECTION: E
+
+
+
+		/* Yahan maine BookRooms.h wale forms par saare buttons k event handlers banaye hain.
+		 In sab buttons ki implementation BookRooms.cpp file mein likhi hai */
+
+
+		
+		void AddButton_Click(System::Object^ sender, System::EventArgs^ e);
+
+		void DeleteButton_Click(System::Object^ sender, System::EventArgs^ e);
+
+		void HomeButton_Click(System::Object^ sender, System::EventArgs^ e);
+
+		void NextButton_Click(System::Object^ sender, System::EventArgs^ e);
+
+
+	
+		/*Yahan maine BookRooms.h wale forms par saare buttons k event handlers initialize kiye hain,
+		aur har button k event handler ko initialize karte hue us button ka respective function call
+		kiya hua hai, har button k functions BookRooms.cpp file mein banay hain, wahan se call kiye hain.*/
+
+	private: System::Void AddButton_Click_1(System::Object^ sender, System::EventArgs^ e) {
+		AddButton_Click(sender, e);
 	}
-private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
-}
+	private: System::Void DeleteButton_Click_1(System::Object^ sender, System::EventArgs^ e) {
+		DeleteButton_Click(sender, e);
+	}
+
+	private: System::Void HomeButton_Click_1(System::Object^ sender, System::EventArgs^ e) {
+		HomeButton_Click(sender, e);
+	}
+
+	private: System::Void NextButton_Click_1(System::Object^ sender, System::EventArgs^ e) {
+		NextButton_Click(sender, e);
+	}
+	
+	
+
+
 };
 }

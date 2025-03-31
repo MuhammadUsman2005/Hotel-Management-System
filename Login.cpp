@@ -31,7 +31,7 @@ void Login::CheckLogin(System::Object^ sender, System::EventArgs^ e)
     String^ userName = textBoxUserName->Text;
     String^ password = textBoxPassword->Text;
 
-    if (userName == "admin" && password == "123")
+    if (userName == "usman" && password == "123")
     {
         MessageBox::Show("Login Successful");
         this->Hide();
