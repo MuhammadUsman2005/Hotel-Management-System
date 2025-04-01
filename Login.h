@@ -34,12 +34,18 @@ namespace HOTELMANAGEMENTSYSTEM {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Button^ button4;
+	private: System::Windows::Forms::Button^ ClearButton;
 	protected:
-	private: System::Windows::Forms::Button^ button2;
+
+	private: System::Windows::Forms::Button^ LoginButton;
+	protected:
+
 	private: System::Windows::Forms::Panel^ panel4;
-	private: System::Windows::Forms::Button^ button3;
-	private: System::Windows::Forms::Button^ button5;
+	private: System::Windows::Forms::Button^ ShowPasswordButton;
+	private: System::Windows::Forms::Button^ HidePasswordButton;
+
+
+
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
 	private: System::Windows::Forms::TextBox^ textBoxPassword;
 		   void CheckLogin(System::Object^ sender, System::EventArgs^ e);
@@ -73,11 +79,11 @@ namespace HOTELMANAGEMENTSYSTEM {
 
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Login::typeid));
-			this->button4 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->ClearButton = (gcnew System::Windows::Forms::Button());
+			this->LoginButton = (gcnew System::Windows::Forms::Button());
 			this->panel4 = (gcnew System::Windows::Forms::Panel());
-			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->button5 = (gcnew System::Windows::Forms::Button());
+			this->ShowPasswordButton = (gcnew System::Windows::Forms::Button());
+			this->HidePasswordButton = (gcnew System::Windows::Forms::Button());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->textBoxPassword = (gcnew System::Windows::Forms::TextBox());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
@@ -99,43 +105,43 @@ namespace HOTELMANAGEMENTSYSTEM {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			this->SuspendLayout();
 			// 
-			// button4
+			// ClearButton
 			// 
-			this->button4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+			this->ClearButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			this->button4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->ClearButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button4->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->button4->Location = System::Drawing::Point(872, 623);
-			this->button4->Margin = System::Windows::Forms::Padding(2);
-			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(218, 46);
-			this->button4->TabIndex = 13;
-			this->button4->Text = L"CLEAR";
-			this->button4->UseVisualStyleBackColor = false;
-			this->button4->Click += gcnew System::EventHandler(this, &Login::button4_Click_1);
+			this->ClearButton->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->ClearButton->Location = System::Drawing::Point(872, 623);
+			this->ClearButton->Margin = System::Windows::Forms::Padding(2);
+			this->ClearButton->Name = L"ClearButton";
+			this->ClearButton->Size = System::Drawing::Size(218, 46);
+			this->ClearButton->TabIndex = 13;
+			this->ClearButton->Text = L"CLEAR";
+			this->ClearButton->UseVisualStyleBackColor = false;
+			this->ClearButton->Click += gcnew System::EventHandler(this, &Login::ClearButton_Click);
 			// 
-			// button2
+			// LoginButton
 			// 
-			this->button2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+			this->LoginButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			this->button2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->LoginButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button2->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->button2->Location = System::Drawing::Point(872, 513);
-			this->button2->Margin = System::Windows::Forms::Padding(2);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(218, 46);
-			this->button2->TabIndex = 12;
-			this->button2->Text = L"LOGIN AS ADMIN";
-			this->button2->UseVisualStyleBackColor = false;
-			this->button2->Click += gcnew System::EventHandler(this, &Login::button2_Click);
+			this->LoginButton->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->LoginButton->Location = System::Drawing::Point(872, 513);
+			this->LoginButton->Margin = System::Windows::Forms::Padding(2);
+			this->LoginButton->Name = L"LoginButton";
+			this->LoginButton->Size = System::Drawing::Size(218, 46);
+			this->LoginButton->TabIndex = 12;
+			this->LoginButton->Text = L"LOGIN AS ADMIN";
+			this->LoginButton->UseVisualStyleBackColor = false;
+			this->LoginButton->Click += gcnew System::EventHandler(this, &Login::LoginButton_Click);
 			// 
 			// panel4
 			// 
 			this->panel4->BackColor = System::Drawing::Color::White;
-			this->panel4->Controls->Add(this->button3);
-			this->panel4->Controls->Add(this->button5);
+			this->panel4->Controls->Add(this->ShowPasswordButton);
+			this->panel4->Controls->Add(this->HidePasswordButton);
 			this->panel4->Controls->Add(this->pictureBox2);
 			this->panel4->Controls->Add(this->textBoxPassword);
 			this->panel4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 26.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -146,36 +152,36 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->panel4->Size = System::Drawing::Size(481, 64);
 			this->panel4->TabIndex = 10;
 			// 
-			// button3
+			// ShowPasswordButton
 			// 
-			this->button3->BackColor = System::Drawing::Color::White;
-			this->button3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button3.BackgroundImage")));
-			this->button3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
-			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button3->ForeColor = System::Drawing::Color::Black;
-			this->button3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button3.Image")));
-			this->button3->Location = System::Drawing::Point(413, 8);
-			this->button3->Margin = System::Windows::Forms::Padding(2);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(53, 47);
-			this->button3->TabIndex = 9;
-			this->button3->UseVisualStyleBackColor = false;
-			this->button3->Click += gcnew System::EventHandler(this, &Login::button3_Click_1);
+			this->ShowPasswordButton->BackColor = System::Drawing::Color::White;
+			this->ShowPasswordButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ShowPasswordButton.BackgroundImage")));
+			this->ShowPasswordButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->ShowPasswordButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->ShowPasswordButton->ForeColor = System::Drawing::Color::Black;
+			this->ShowPasswordButton->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ShowPasswordButton.Image")));
+			this->ShowPasswordButton->Location = System::Drawing::Point(413, 8);
+			this->ShowPasswordButton->Margin = System::Windows::Forms::Padding(2);
+			this->ShowPasswordButton->Name = L"ShowPasswordButton";
+			this->ShowPasswordButton->Size = System::Drawing::Size(53, 47);
+			this->ShowPasswordButton->TabIndex = 9;
+			this->ShowPasswordButton->UseVisualStyleBackColor = false;
+			this->ShowPasswordButton->Click += gcnew System::EventHandler(this, &Login::ShowPasswordButton_Click);
 			// 
-			// button5
+			// HidePasswordButton
 			// 
-			this->button5->BackColor = System::Drawing::Color::White;
-			this->button5->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button5->ForeColor = System::Drawing::Color::Black;
-			this->button5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button5.Image")));
-			this->button5->Location = System::Drawing::Point(413, 9);
-			this->button5->Margin = System::Windows::Forms::Padding(2);
-			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(53, 46);
-			this->button5->TabIndex = 8;
-			this->button5->UseVisualStyleBackColor = false;
-			this->button5->Visible = false;
-			this->button5->Click += gcnew System::EventHandler(this, &Login::button5_Click_1);
+			this->HidePasswordButton->BackColor = System::Drawing::Color::White;
+			this->HidePasswordButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->HidePasswordButton->ForeColor = System::Drawing::Color::Black;
+			this->HidePasswordButton->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"HidePasswordButton.Image")));
+			this->HidePasswordButton->Location = System::Drawing::Point(413, 9);
+			this->HidePasswordButton->Margin = System::Windows::Forms::Padding(2);
+			this->HidePasswordButton->Name = L"HidePasswordButton";
+			this->HidePasswordButton->Size = System::Drawing::Size(53, 46);
+			this->HidePasswordButton->TabIndex = 8;
+			this->HidePasswordButton->UseVisualStyleBackColor = false;
+			this->HidePasswordButton->Visible = false;
+			this->HidePasswordButton->Click += gcnew System::EventHandler(this, &Login::HidePasswordButton_Click);
 			// 
 			// pictureBox2
 			// 
@@ -260,7 +266,6 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->label4->TabIndex = 8;
 			this->label4->Text = L"Login To Your Account";
 			this->label4->TextAlign = System::Drawing::ContentAlignment::TopCenter;
-			this->label4->Click += gcnew System::EventHandler(this, &Login::label4_Click);
 			// 
 			// panel1
 			// 
@@ -333,8 +338,8 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1511, 740);
 			this->Controls->Add(this->panel1);
-			this->Controls->Add(this->button4);
-			this->Controls->Add(this->button2);
+			this->Controls->Add(this->ClearButton);
+			this->Controls->Add(this->LoginButton);
 			this->Controls->Add(this->panel4);
 			this->Controls->Add(this->panel3);
 			this->Controls->Add(this->label4);
@@ -356,31 +361,55 @@ namespace HOTELMANAGEMENTSYSTEM {
 		}
 #pragma endregion
 		
-	private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+		/* Is file mein ooper top se (#pragma once) lekar neeche bottom (#pragma endregion) tak
+		jo code likha hua hai, ye Microsoft Visual Studio ka Automatically generated code hota hai,
+		yani jo UI hum tool-box se drag and drop k through design karte hain, usi ko Microsoft Visual
+		Studio apne aap hee se automatically, code mein convert kar deta hai.
+
+		Is liye #pragma once se lekar #pragma endregion tak ka code hamare samajhne k liye nahi hai, ye
+		just UI form k design ko automatically coding ki language mein convert kar deta hai.*/
+
+
+
+		// MUHAMMAD USMAN MASOOD
+		// CT-24239
+		// SECTION: E
+
+
+
+		/* Yahan maine Login.h wale forms par saare buttons k event handlers banaye hain. */
+		 
+
+	// LoginButton ka event handler
+
+private: System::Void LoginButton_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	// Login.cpp file mein jo "CheckLogin" naam ka function banaya hai, usko call kiya hai.
 
 	CheckLogin(sender,  e);
 }
+	// ClearButton ka event handler
 
-private: System::Void button4_Click_1(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void ClearButton_Click(System::Object^ sender, System::EventArgs^ e) {
 
-	textBoxUserName->Clear();
-	textBoxPassword->Clear();
+	textBoxUserName->Clear(); // username mit jaye ga
+	textBoxPassword->Clear(); // password mit jaye ga
 }
 
-private: System::Void button3_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	// ShowPasswordButton ka event handler
 
-	button3->Hide();
-	button5->Show();
-	textBoxPassword->UseSystemPasswordChar = false;
+private: System::Void ShowPasswordButton_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	ShowPasswordButton->Hide();
+	HidePasswordButton->Show();
+	textBoxPassword->UseSystemPasswordChar = false; // password show ho jaye ga
 }
 
-private: System::Void button5_Click_1(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void HidePasswordButton_Click(System::Object^ sender, System::EventArgs^ e) {
 
-	button5->Hide();
-	button3->Show();
-	textBoxPassword->UseSystemPasswordChar = true;
+	HidePasswordButton->Hide();
+	ShowPasswordButton->Show();
+	textBoxPassword->UseSystemPasswordChar = true; // password hide ho jaye ga
 }
 };
 }

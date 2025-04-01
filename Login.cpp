@@ -22,12 +22,17 @@ using namespace HOTELMANAGEMENTSYSTEM;
          Application::Run(% form);
      }
 
+    // DONE BY MUHAMMAD USMAN MASOOD
+    // CT-24239
+    // SECTION: E
 
-
+     // Login check karne ka function banaya hai
 
 void Login::CheckLogin(System::Object^ sender, System::EventArgs^ e)
 {
    
+    // textboxes k andar username aur password ko input lega
+
     String^ userName = textBoxUserName->Text;
     String^ password = textBoxPassword->Text;
 
@@ -35,8 +40,6 @@ void Login::CheckLogin(System::Object^ sender, System::EventArgs^ e)
     {
         MessageBox::Show("Login Successful");
         this->Hide();
-
-
         Dashboard^ dashboard = gcnew Dashboard();
         dashboard->Show();
     }
