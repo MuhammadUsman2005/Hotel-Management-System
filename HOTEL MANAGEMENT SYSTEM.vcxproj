@@ -119,40 +119,51 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BookRoom.cpp" />
+    <ClCompile Include="BookRooms.cpp" />
+    <ClCompile Include="CheckAvailability.cpp" />
     <ClCompile Include="GenerateBills.cpp" />
     <ClCompile Include="Login.cpp" />
+    <ClCompile Include="Dashboard.cpp" />
+    <ClCompile Include="ViewDetails.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BookRoom.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="GenerateBills.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="Header.h" />
-    <ClInclude Include="Login.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="MainPage.h">
+    <ClInclude Include="CheckAvailability.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ViewDetails.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="GenerateBills.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Login.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Dashboard.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="BookRooms.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="BookRoom.resx">
-      <DependentUpon>BookRoom.h</DependentUpon>
+    <EmbeddedResource Include="CheckAvailability.resx">
+      <DependentUpon>CheckAvailability.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenerateBills.resx">
+      <DependentUpon>GenerateBills.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewDetails.resx">
+      <DependentUpon>ViewDetails.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainPage.resx">
-      <DependentUpon>MainPage.h</DependentUpon>
+    <EmbeddedResource Include="Dashboard.resx">
+      <DependentUpon>Dashboard.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewDetails.resx">
-      <DependentUpon>ViewDetails.h</DependentUpon>
+    <EmbeddedResource Include="BookRooms.resx">
+      <DependentUpon>BookRooms.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

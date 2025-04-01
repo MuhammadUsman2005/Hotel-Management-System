@@ -1,6 +1,5 @@
 #include "Login.h"
-#include <string.h>
-#include "MainPage.h"
+#include "Dashboard.h"
 #include <string>
 
 
@@ -15,31 +14,34 @@ using namespace System::Drawing;
 using namespace HOTELMANAGEMENTSYSTEM;
 
   
-     void main(array<String^>^ args)
-    {
-         
-        Application::EnableVisualStyles();
-        Application::SetCompatibleTextRenderingDefault(false);
-        HOTELMANAGEMENTSYSTEM::Login form;
-        Application::Run(% form);
-    }
+     int main(array<String^>^ args)
+     {
+         Application::EnableVisualStyles();
+         Application::SetCompatibleTextRenderingDefault(false);
+         HOTELMANAGEMENTSYSTEM::Login form;
+         Application::Run(% form);
+     }
 
+    // DONE BY MUHAMMAD USMAN MASOOD
+    // CT-24239
+    // SECTION: E
 
-
+     // Login check karne ka function banaya hai
 
 void Login::CheckLogin(System::Object^ sender, System::EventArgs^ e)
 {
    
+    // textboxes k andar username aur password ko input lega
+
     String^ userName = textBoxUserName->Text;
     String^ password = textBoxPassword->Text;
 
-    if (userName == "Admin" && password == "123")
+    if (userName == "usman" && password == "123")
     {
         MessageBox::Show("Login Successful");
         this->Hide();
-
-        MainPage^ mainPage = gcnew MainPage();
-        mainPage->Show();
+        Dashboard^ dashboard = gcnew Dashboard();
+        dashboard->Show();
     }
 
     else 
@@ -49,3 +51,5 @@ void Login::CheckLogin(System::Object^ sender, System::EventArgs^ e)
 
 
 }
+
+
