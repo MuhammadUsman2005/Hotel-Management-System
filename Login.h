@@ -82,9 +82,9 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->ClearButton = (gcnew System::Windows::Forms::Button());
 			this->LoginButton = (gcnew System::Windows::Forms::Button());
 			this->panel4 = (gcnew System::Windows::Forms::Panel());
-			this->ShowPasswordButton = (gcnew System::Windows::Forms::Button());
 			this->HidePasswordButton = (gcnew System::Windows::Forms::Button());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
+			this->ShowPasswordButton = (gcnew System::Windows::Forms::Button());
 			this->textBoxPassword = (gcnew System::Windows::Forms::TextBox());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
@@ -152,32 +152,16 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->panel4->Size = System::Drawing::Size(481, 64);
 			this->panel4->TabIndex = 10;
 			// 
-			// ShowPasswordButton
-			// 
-			this->ShowPasswordButton->BackColor = System::Drawing::Color::White;
-			this->ShowPasswordButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ShowPasswordButton.BackgroundImage")));
-			this->ShowPasswordButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
-			this->ShowPasswordButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->ShowPasswordButton->ForeColor = System::Drawing::Color::Black;
-			this->ShowPasswordButton->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ShowPasswordButton.Image")));
-			this->ShowPasswordButton->Location = System::Drawing::Point(413, 8);
-			this->ShowPasswordButton->Margin = System::Windows::Forms::Padding(2);
-			this->ShowPasswordButton->Name = L"ShowPasswordButton";
-			this->ShowPasswordButton->Size = System::Drawing::Size(53, 47);
-			this->ShowPasswordButton->TabIndex = 9;
-			this->ShowPasswordButton->UseVisualStyleBackColor = false;
-			this->ShowPasswordButton->Click += gcnew System::EventHandler(this, &Login::ShowPasswordButton_Click);
-			// 
 			// HidePasswordButton
 			// 
 			this->HidePasswordButton->BackColor = System::Drawing::Color::White;
 			this->HidePasswordButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->HidePasswordButton->ForeColor = System::Drawing::Color::Black;
 			this->HidePasswordButton->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"HidePasswordButton.Image")));
-			this->HidePasswordButton->Location = System::Drawing::Point(413, 9);
+			this->HidePasswordButton->Location = System::Drawing::Point(413, 8);
 			this->HidePasswordButton->Margin = System::Windows::Forms::Padding(2);
 			this->HidePasswordButton->Name = L"HidePasswordButton";
-			this->HidePasswordButton->Size = System::Drawing::Size(53, 46);
+			this->HidePasswordButton->Size = System::Drawing::Size(53, 47);
 			this->HidePasswordButton->TabIndex = 8;
 			this->HidePasswordButton->UseVisualStyleBackColor = false;
 			this->HidePasswordButton->Visible = false;
@@ -193,6 +177,22 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox2->TabIndex = 3;
 			this->pictureBox2->TabStop = false;
+			// 
+			// ShowPasswordButton
+			// 
+			this->ShowPasswordButton->BackColor = System::Drawing::Color::White;
+			this->ShowPasswordButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ShowPasswordButton.BackgroundImage")));
+			this->ShowPasswordButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->ShowPasswordButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->ShowPasswordButton->ForeColor = System::Drawing::Color::Black;
+			this->ShowPasswordButton->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ShowPasswordButton.Image")));
+			this->ShowPasswordButton->Location = System::Drawing::Point(413, 8);
+			this->ShowPasswordButton->Margin = System::Windows::Forms::Padding(2);
+			this->ShowPasswordButton->Name = L"ShowPasswordButton";
+			this->ShowPasswordButton->Size = System::Drawing::Size(53, 47);
+			this->ShowPasswordButton->TabIndex = 9;
+			this->ShowPasswordButton->UseVisualStyleBackColor = false;
+			this->ShowPasswordButton->Click += gcnew System::EventHandler(this, &Login::ShowPasswordButton_Click);
 			// 
 			// textBoxPassword
 			// 
@@ -371,22 +371,14 @@ namespace HOTELMANAGEMENTSYSTEM {
 
 
 
-		// MUHAMMAD USMAN MASOOD
-		// CT-24239
-		// SECTION: E
-
-
-
-		/* Yahan maine Login.h wale forms par saare buttons k event handlers banaye hain. */
+		/* Yahan hum ne Login.h wale forms par saare buttons k event handlers banaye hain. */
 		 
 
 	// LoginButton ka event handler
 
 private: System::Void LoginButton_Click(System::Object^ sender, System::EventArgs^ e) {
 
-	// Login.cpp file mein jo "CheckLogin" naam ka function banaya hai, usko call kiya hai.
-
-	CheckLogin(sender,  e);
+	CheckLogin(sender, e); // Login.cpp file mein jo "CheckLogin" naam ka function banaya hai, usko call kiya hai.
 }
 	// ClearButton ka event handler
 
@@ -396,19 +388,19 @@ private: System::Void ClearButton_Click(System::Object^ sender, System::EventArg
 	textBoxPassword->Clear(); // password mit jaye ga
 }
 
-	// ShowPasswordButton ka event handler
-
-private: System::Void ShowPasswordButton_Click(System::Object^ sender, System::EventArgs^ e) {
-
-	ShowPasswordButton->Hide();
-	HidePasswordButton->Show();
-	textBoxPassword->UseSystemPasswordChar = false; // password show ho jaye ga
-}
+	// Show and Hide PasswordButtons k event handlers
 
 private: System::Void HidePasswordButton_Click(System::Object^ sender, System::EventArgs^ e) {
 
 	HidePasswordButton->Hide();
 	ShowPasswordButton->Show();
+	textBoxPassword->UseSystemPasswordChar = false; // password show ho jaye ga
+}
+
+private: System::Void ShowPasswordButton_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	ShowPasswordButton->Hide();
+	HidePasswordButton->Show();
 	textBoxPassword->UseSystemPasswordChar = true; // password hide ho jaye ga
 }
 };

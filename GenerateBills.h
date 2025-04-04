@@ -21,6 +21,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 			//
 			//TODO: Add the constructor code here
 			//
+            
 		}
 
 	protected:
@@ -49,19 +50,6 @@ namespace HOTELMANAGEMENTSYSTEM {
     private: System::Windows::Forms::Label^ label1;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     private: System::Windows::Forms::TextBox^ textBox3;
     private: System::Windows::Forms::Label^ label5;
 
@@ -77,10 +65,13 @@ namespace HOTELMANAGEMENTSYSTEM {
     private: System::Windows::Forms::Button^ GenerateBillButton;
 
     private: System::Windows::Forms::Label^ label10;
-    private: System::Windows::Forms::ComboBox^ comboBox5;
+
     private: System::Windows::Forms::Button^ HomeButton;
 
     private: System::Windows::Forms::Button^ BackButton;
+    private: System::Windows::Forms::TextBox^ textBox1;
+
+
 
 
 	private:
@@ -121,9 +112,9 @@ namespace HOTELMANAGEMENTSYSTEM {
             this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
             this->GenerateBillButton = (gcnew System::Windows::Forms::Button());
             this->label10 = (gcnew System::Windows::Forms::Label());
-            this->comboBox5 = (gcnew System::Windows::Forms::ComboBox());
             this->HomeButton = (gcnew System::Windows::Forms::Button());
             this->BackButton = (gcnew System::Windows::Forms::Button());
+            this->textBox1 = (gcnew System::Windows::Forms::TextBox());
             this->panel1->SuspendLayout();
             this->SuspendLayout();
             // 
@@ -280,9 +271,9 @@ namespace HOTELMANAGEMENTSYSTEM {
             this->label3->Location = System::Drawing::Point(527, 203);
             this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
             this->label3->Name = L"label3";
-            this->label3->Size = System::Drawing::Size(152, 26);
+            this->label3->Size = System::Drawing::Size(142, 26);
             this->label3->TabIndex = 63;
-            this->label3->Text = L"CUSTOMER ID";
+            this->label3->Text = L"BOOKING ID";
             // 
             // label6
             // 
@@ -390,6 +381,7 @@ namespace HOTELMANAGEMENTSYSTEM {
             this->GenerateBillButton->TabIndex = 100;
             this->GenerateBillButton->Text = L"GENERATE BILL";
             this->GenerateBillButton->UseVisualStyleBackColor = false;
+            this->GenerateBillButton->Click += gcnew System::EventHandler(this, &GenerateBills::GenerateBillButton_Click_1);
             // 
             // label10
             // 
@@ -407,21 +399,6 @@ namespace HOTELMANAGEMENTSYSTEM {
             this->label10->TabIndex = 101;
             this->label10->Text = L"YOUR TOTAL BILL : ";
             // 
-            // comboBox5
-            // 
-            this->comboBox5->Font = (gcnew System::Drawing::Font(L"Century Gothic", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(0)));
-            this->comboBox5->FormattingEnabled = true;
-            this->comboBox5->Items->AddRange(gcnew cli::array< System::Object^  >(8) {
-                L"01", L"02", L"03", L"04", L"05", L"06", L"07",
-                    L"08"
-            });
-            this->comboBox5->Location = System::Drawing::Point(754, 199);
-            this->comboBox5->Margin = System::Windows::Forms::Padding(2);
-            this->comboBox5->Name = L"comboBox5";
-            this->comboBox5->Size = System::Drawing::Size(319, 30);
-            this->comboBox5->TabIndex = 102;
-            // 
             // HomeButton
             // 
             this->HomeButton->BackColor = System::Drawing::Color::Crimson;
@@ -435,6 +412,7 @@ namespace HOTELMANAGEMENTSYSTEM {
             this->HomeButton->TabIndex = 103;
             this->HomeButton->Text = L"HOME";
             this->HomeButton->UseVisualStyleBackColor = false;
+            this->HomeButton->Click += gcnew System::EventHandler(this, &GenerateBills::HomeButton_Click_1);
             // 
             // BackButton
             // 
@@ -449,15 +427,28 @@ namespace HOTELMANAGEMENTSYSTEM {
             this->BackButton->TabIndex = 104;
             this->BackButton->Text = L"BACK";
             this->BackButton->UseVisualStyleBackColor = false;
+            this->BackButton->Click += gcnew System::EventHandler(this, &GenerateBills::BackButton_Click_1);
+            // 
+            // textBox1
+            // 
+            this->textBox1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->textBox1->Location = System::Drawing::Point(754, 197);
+            this->textBox1->Margin = System::Windows::Forms::Padding(2);
+            this->textBox1->Multiline = true;
+            this->textBox1->Name = L"textBox1";
+            this->textBox1->Size = System::Drawing::Size(319, 32);
+            this->textBox1->TabIndex = 105;
+            this->textBox1->TextChanged += gcnew System::EventHandler(this, &GenerateBills::textBox1_TextChanged);
             // 
             // GenerateBills
             // 
             this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
             this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
             this->ClientSize = System::Drawing::Size(1604, 881);
+            this->Controls->Add(this->textBox1);
             this->Controls->Add(this->BackButton);
             this->Controls->Add(this->HomeButton);
-            this->Controls->Add(this->comboBox5);
             this->Controls->Add(this->label10);
             this->Controls->Add(this->GenerateBillButton);
             this->Controls->Add(this->comboBox1);
@@ -487,7 +478,32 @@ namespace HOTELMANAGEMENTSYSTEM {
         }
 #pragma endregion
 
-		
+        
     
+            Void GenerateBillButton_Click(System::Object^ sender, System::EventArgs^ e);
+
+            Void BackButton_Click(System::Object^ sender, System::EventArgs^ e);
+
+            Void HomeButton_Click(System::Object^ sender, System::EventArgs^ e);
+
+            Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e);
+
+
+    private: System::Void HomeButton_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	HomeButton_Click(sender, e);
+    }
+    
+    private: System::Void GenerateBillButton_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	GenerateBillButton_Click(sender, e);
+    }
+
+    private: System::Void BackButton_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	BackButton_Click(sender, e);
+    }
+
+
+
+
+
 };
 }

@@ -306,23 +306,8 @@ namespace HOTELMANAGEMENTSYSTEM {
 		}
 #pragma endregion
 
-		/* Is file mein ooper top se (#pragma once) lekar neeche bottom (#pragma endregion) tak
-		jo code likha hua hai, ye Microsoft Visual Studio ka Automatically generated code hota hai, 
-		yani jo UI hum tool-box se drag and drop k through design karte hain, usi ko Microsoft Visual
-		Studio apne aap hee se automatically, code mein convert kar deta hai.
-
-		Is liye #pragma once se lekar #pragma endregion tak ka code hamare samajhne k liye nahi hai, ye
-		just UI form k design ko automatically coding ki language mein convert kar deta hai.*/
-
-
-
-		// MUHAMMAD USMAN MASOOD
-		// CT-24239
-		// SECTION: E
-
-
-
-		/* Yahan maine Dashboard.h wale forms par saare buttons k event handlers banaye hain.
+		
+		/* Yahan hum ne Dashboard.h wale forms par saare buttons k event handlers banaye hain.
 		 In sab buttons ki implementation Dashboard.cpp file mein likhi hai */
 
 		void BookRoomsButton_Click(System::Object^ sender, System::EventArgs^ e);

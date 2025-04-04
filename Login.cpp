@@ -22,11 +22,8 @@ using namespace HOTELMANAGEMENTSYSTEM;
          Application::Run(% form);
      }
 
-    // DONE BY MUHAMMAD USMAN MASOOD
-    // CT-24239
-    // SECTION: E
 
-     // Login check karne ka function banaya hai
+     // Yahan hum ne Login check karne ka function banaya hai
 
 void Login::CheckLogin(System::Object^ sender, System::EventArgs^ e)
 {
@@ -36,7 +33,7 @@ void Login::CheckLogin(System::Object^ sender, System::EventArgs^ e)
     String^ userName = textBoxUserName->Text;
     String^ password = textBoxPassword->Text;
 
-    if (userName == "usman" && password == "123")
+    if (userName == "admin" && password == "123")
     {
         MessageBox::Show("Login Successful");
         this->Hide();
