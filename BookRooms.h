@@ -31,8 +31,60 @@ namespace HOTELMANAGEMENTSYSTEM {
 			/* LoadData() function call kiya hai, jab yeh form load hoga tou saari details load ho jayengi DataGridView mein */
 
 			LoadData();
-
+			this->dataGridView1->SelectionChanged += gcnew System::EventHandler(this, &BookRooms::dataGridView1_SelectionChanged);
+			this->dataGridView1->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
+			this->dataGridView1->MultiSelect = false;
 		}
+
+        // Helper function k zariye se saari values lenge
+
+		/*  Line number 44 se 85 tak, app ko user friendly bananay ka code hai
+		DataGridView ki jis row pe click karen ge, uski details, textboxes mein show ho jayen gi*/
+
+        String^ GetCellValue(DataGridViewRow^ selectedRow, String^ columnName) {
+        if (selectedRow->Cells[columnName]->Value == nullptr)
+        return String::Empty;
+        return selectedRow->Cells[columnName]->Value->ToString();
+        }
+
+        System::Void dataGridView1_SelectionChanged(System::Object^ sender, System::EventArgs^ e) {
+        // Clear controls if no row is selected
+        if (dataGridView1->SelectedRows->Count == 0) {
+        FisrtNameTextBox->Clear();
+        LastNameTextBox->Clear();
+        ResidentialAddressBox->Clear();
+        EmailTextBox->Clear();
+        ContactNumberTextBox->Clear();
+        NationalityComboBox->SelectedIndex = -1;
+        GenderComboBox->SelectedIndex = -1;
+        RoomTypeComboBox->SelectedIndex = -1;
+        RoomNoComboBox->SelectedIndex = -1;
+        dateTimePicker1->Value = DateTime::Now;
+        return;
+        }
+
+        DataGridViewRow^ selectedRow = dataGridView1->SelectedRows[0];
+
+        // Update textboxes
+        FisrtNameTextBox->Text = GetCellValue(selectedRow, "firstName");
+        LastNameTextBox->Text = GetCellValue(selectedRow, "lastName");
+        ResidentialAddressBox->Text = GetCellValue(selectedRow, "address");
+        EmailTextBox->Text = GetCellValue(selectedRow, "email");
+        ContactNumberTextBox->Text = GetCellValue(selectedRow, "mobile");
+
+        // Update comboboxes
+        NationalityComboBox->Text = GetCellValue(selectedRow, "nationality");
+        GenderComboBox->Text = GetCellValue(selectedRow, "gender");
+        RoomTypeComboBox->Text = GetCellValue(selectedRow, "roomType");
+        RoomNoComboBox->Text = GetCellValue(selectedRow, "roomNo");
+
+        // Update datetimepicker
+        DateTime checkinDate;
+        if (DateTime::TryParse(GetCellValue(selectedRow, "checkinDate"), checkinDate)) {
+        dateTimePicker1->Value = checkinDate;
+        }
+        }
+	
 		
 	protected:
 		/// <summary>

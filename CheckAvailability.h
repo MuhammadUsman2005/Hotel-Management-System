@@ -21,6 +21,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 			//
 			//TODO: Add the constructor code here
 			//
+			LoadData();
 		}
 
 	protected:
@@ -34,6 +35,11 @@ namespace HOTELMANAGEMENTSYSTEM {
 				delete components;
 			}
 		}
+	protected:
+		void LoadData();
+
+
+
 	private: System::Windows::Forms::Panel^ panel1;
 	protected:
 	private: System::Windows::Forms::Label^ label8;
@@ -66,7 +72,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -283,7 +289,6 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->label7->TabIndex = 37;
 			this->label7->Text = L"PRICE PER NIGHT";
 			this->label7->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			this->label7->Click += gcnew System::EventHandler(this, &CheckAvailability::label7_Click);
 			// 
 			// label5
 			// 
@@ -421,7 +426,6 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->Size = System::Drawing::Size(740, 524);
 			this->dataGridView1->TabIndex = 86;
-			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &CheckAvailability::dataGridView1_CellContentClick);
 			// 
 			// BackButton
 			// 
@@ -436,6 +440,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->BackButton->TabIndex = 87;
 			this->BackButton->Text = L"BACK";
 			this->BackButton->UseVisualStyleBackColor = false;
+			this->BackButton->Click += gcnew System::EventHandler(this, &CheckAvailability::BackButton_Click_1);
 			// 
 			// NextButton
 			// 
@@ -451,6 +456,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->NextButton->TabIndex = 88;
 			this->NextButton->Text = L"NEXT";
 			this->NextButton->UseVisualStyleBackColor = false;
+			this->NextButton->Click += gcnew System::EventHandler(this, &CheckAvailability::NextButton_Click_1);
 			// 
 			// CheckAvailability
 			// 
@@ -465,7 +471,6 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->Controls->Add(this->panel1);
 			this->Name = L"CheckAvailability";
 			this->Text = L"CheckAvailability";
-			this->Load += gcnew System::EventHandler(this, &CheckAvailability::CheckAvailability_Load);
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
 			this->panel2->ResumeLayout(false);
@@ -479,11 +484,19 @@ namespace HOTELMANAGEMENTSYSTEM {
 
 		}
 #pragma endregion
-	private: System::Void label7_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		void BackButton_Click(System::Object^ sender, System::EventArgs^ e);
+
+		void NextButton_Click(System::Object^ sender, System::EventArgs^ e);
+
+
+	private: System::Void BackButton_Click_1(System::Object^ sender, System::EventArgs^ e) {
+		BackButton_Click(sender, e);
 	}
-private: System::Void CheckAvailability_Load(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-}
-};
+
+	private: System::Void NextButton_Click_1(System::Object^ sender, System::EventArgs^ e) {
+		NextButton_Click(sender, e);
+	}
+
+	};
 }

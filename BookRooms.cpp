@@ -278,7 +278,6 @@ namespace HOTELMANAGEMENTSYSTEM {
         MessageBoxIcon icon = MessageBoxIcon::Question;
         MessageBoxButtons buttons = MessageBoxButtons::YesNo;
         if (MessageBox::Show("Are you sure you want to go back to dashboard?", "Confirm", buttons, icon) == System::Windows::Forms::DialogResult::Yes) {
-
             Dashboard^ dashboard = gcnew Dashboard();
             dashboard->Show();
             this->Hide();
