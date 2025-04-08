@@ -70,7 +70,7 @@ namespace HOTELMANAGEMENTSYSTEM {
     private: System::Windows::Forms::ComboBox^ roomPricePerNightComboBox;
     private: System::Windows::Forms::Button^ GenerateBillButton;
 
-    private: System::Windows::Forms::Label^ label10;
+    private: System::Windows::Forms::Label^ TotalBillLabel;
 
     private: System::Windows::Forms::Button^ HomeButton;
 
@@ -121,7 +121,7 @@ namespace HOTELMANAGEMENTSYSTEM {
             this->label7 = (gcnew System::Windows::Forms::Label());
             this->roomPricePerNightComboBox = (gcnew System::Windows::Forms::ComboBox());
             this->GenerateBillButton = (gcnew System::Windows::Forms::Button());
-            this->label10 = (gcnew System::Windows::Forms::Label());
+            this->TotalBillLabel = (gcnew System::Windows::Forms::Label());
             this->HomeButton = (gcnew System::Windows::Forms::Button());
             this->BackButton = (gcnew System::Windows::Forms::Button());
             this->bookingIDTextbox = (gcnew System::Windows::Forms::TextBox());
@@ -396,19 +396,19 @@ namespace HOTELMANAGEMENTSYSTEM {
             // 
             // label10
             // 
-            this->label10->AutoSize = true;
-            this->label10->BackColor = System::Drawing::SystemColors::ButtonHighlight;
-            this->label10->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-            this->label10->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+            this->TotalBillLabel->AutoSize = true;
+            this->TotalBillLabel->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+            this->TotalBillLabel->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+            this->TotalBillLabel->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label10->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+            this->TotalBillLabel->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
                 static_cast<System::Int32>(static_cast<System::Byte>(185)));
-            this->label10->Location = System::Drawing::Point(806, 745);
-            this->label10->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-            this->label10->Name = L"label10";
-            this->label10->Size = System::Drawing::Size(204, 28);
-            this->label10->TabIndex = 101;
-            this->label10->Text = L"YOUR TOTAL BILL : ";
+            this->TotalBillLabel->Location = System::Drawing::Point(806, 745);
+            this->TotalBillLabel->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+            this->TotalBillLabel->Name = L"label10";
+            this->TotalBillLabel->Size = System::Drawing::Size(204, 28);
+            this->TotalBillLabel->TabIndex = 101;
+            this->TotalBillLabel->Text = L"YOUR TOTAL BILL : ";
             // 
             // HomeButton
             // 
@@ -460,7 +460,7 @@ namespace HOTELMANAGEMENTSYSTEM {
             this->Controls->Add(this->bookingIDTextbox);
             this->Controls->Add(this->BackButton);
             this->Controls->Add(this->HomeButton);
-            this->Controls->Add(this->label10);
+            this->Controls->Add(this->TotalBillLabel);
             this->Controls->Add(this->GenerateBillButton);
             this->Controls->Add(this->roomPricePerNightComboBox);
             this->Controls->Add(this->label7);

@@ -198,10 +198,9 @@ namespace HOTELMANAGEMENTSYSTEM {
         }
     }
 
-
+   
     /* "DELETE" button ka event handler initialize kiya hai, jab DELETE wala button click hoga,
     tou curly brackets k andar likhi hui saari cheezen step by step execute hongi.*/
-
 
 
     void BookRooms::DeleteButton_Click(System::Object^ sender, System::EventArgs^ e) {

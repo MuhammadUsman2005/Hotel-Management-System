@@ -1,5 +1,3 @@
-#include "BookRooms.h"
-#include "Login.h"
 #include "Dashboard.h"
 #include "CheckAvailability.h"
 #include "GenerateBills.h"
@@ -52,7 +50,7 @@ void CheckAvailability::BackButton_Click(System::Object^ sender, System::EventAr
 }
 
 void CheckAvailability::NextButton_Click(System::Object^ sender, System::EventArgs^ e) {
-	ViewDetails^ viewDetails = gcnew ViewDetails();
-    viewDetails->Show();
+	GenerateBills^ generateBills = gcnew GenerateBills();
+    generateBills->Show();
     this->Hide();
 }

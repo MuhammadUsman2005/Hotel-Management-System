@@ -162,6 +162,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 
 
 
+
 	private:
 		/// <summary>
 		/// Required designer variable.
@@ -433,7 +434,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->label2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::Color::White;
-			this->label2->Location = System::Drawing::Point(744, 44);
+			this->label2->Location = System::Drawing::Point(706, 44);
 			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(190, 26);
@@ -602,12 +603,12 @@ namespace HOTELMANAGEMENTSYSTEM {
 			dataGridViewCellStyle1->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
 			this->dataGridView1->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
 			this->dataGridView1->EnableHeadersVisualStyles = false;
-			this->dataGridView1->Location = System::Drawing::Point(545, 102);
+			this->dataGridView1->Location = System::Drawing::Point(545, 108);
 			this->dataGridView1->Margin = System::Windows::Forms::Padding(2);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 90;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(1029, 516);
+			this->dataGridView1->Size = System::Drawing::Size(1029, 499);
 			this->dataGridView1->TabIndex = 50;
 			// 
 			// BookRooms

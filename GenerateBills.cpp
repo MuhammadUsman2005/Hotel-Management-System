@@ -18,7 +18,7 @@ namespace HOTELMANAGEMENTSYSTEM {
             connection->Open();
 
             String^ query = "SELECT b.bookingID, b.checkinDate, b.roomNo, r.roomType, r.price "
-                "FROM bookings b INNER JOIN rooms r ON b.roomNo = r.roomNo "
+                "FROM bookings b INNER JOIN rooms r ON r.roomNo = b.roomNo "
                 "WHERE b.bookingID = @bookingID";
 
             OleDbCommand^ command = gcnew OleDbCommand(query, connection);
@@ -33,10 +33,10 @@ namespace HOTELMANAGEMENTSYSTEM {
                 roomTypeComboBox->Text = reader["roomType"]->ToString();
 
                 String^ roomType = reader["roomType"]->ToString();
-                if (roomType == "SUITE") {
+                if (roomType == "SUITE ($ 200.0)") {
                     roomPricePerNightComboBox->Text = "$ 200.0 (SUITE)";
                 }
-                else if (roomType == "DELUXE") {
+                else if (roomType == "DELUXE ($ 150.0)") {
                     roomPricePerNightComboBox->Text = "$ 150.0 (DELUXE)";
                 }
                 else {
@@ -126,12 +126,12 @@ namespace HOTELMANAGEMENTSYSTEM {
 
             // Calculate and display total bill
             double totalBill = daysStayed * pricePerNight;
-            label10->Text = "YOUR TOTAL BILL : $" + totalBill.ToString("F2");
+            TotalBillLabel->Text = "YOUR TOTAL BILL : $" + totalBill.ToString("F2");
         }
         catch (Exception^ ex)
         {
             MessageBox::Show("Error calculating bill: " + ex->Message +
-                "\nPlease check the room price format.",
+                "\n Please check the room price format.",
                 "Calculation Error",
                 MessageBoxButtons::OK,
                 MessageBoxIcon::Error);
@@ -181,19 +181,10 @@ namespace HOTELMANAGEMENTSYSTEM {
         }
     }
 
-    // Event Handlers
-    //Void GenerateBills::textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e)
-    //{
-    //    // Only process if we have at least 1 character that's a digit
-    //    if (bookingIDTextbox->Text->Length > 0 && Char::IsDigit(bookingIDTextbox->Text[0]))
-    //    {
-    //        LoadBookingDetails(bookingIDTextbox->Text);
-    //    }
-    //}
     Void GenerateBills::textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e)
     {
         // Clear any existing total
-        label10->Text = "YOUR TOTAL BILL : $0.00";
+        TotalBillLabel->Text = "YOUR TOTAL BILL : $0.00";
 
         // Only process if we have at least 1 character that's a digit
         if (bookingIDTextbox->Text->Length > 0 && Char::IsDigit(bookingIDTextbox->Text[0]))
@@ -219,10 +210,35 @@ namespace HOTELMANAGEMENTSYSTEM {
             CalculateDaysStayed();
         }
 
-        // Then calculate and display the total bill
+        // Total bill calculate kar k display karwaya hai, then database mein save karwaya hai
+
         CalculateTotalBill();
         SaveBillToDatabase();
         MessageBox::Show("Bill generated successfully!");
+
+        // Jaise hee checkout ho jaye ga, usi waqt checkoutDate store ho jaye gi database mein
+
+        String^ connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\Hotel Management System\\HOTEL MANAGEMENT SYSTEM\\project resources\\database\\connection.accdb;";
+        OleDbConnection^ connection = gcnew OleDbConnection(connectionString);
+
+        String^ bookingID = bookingIDTextbox->Text; // Hamara wala input lega
+
+        String^ bookingQuery = "INSERT INTO bookings (checkoutDate ) VALUES (@checkoutDate )";
+        OleDbCommand^ bookingCommand = gcnew OleDbCommand(bookingQuery, connection);
+
+		bookingCommand->Parameters->AddWithValue("@checkoutDate", checkOutDatePicker->Value.ToString("MM/dd/yyyy"));
+
+        try {
+            connection->Open();
+
+            MessageBox::Show("Checkout has been done successfully!\n Thank You!");
+        }
+        catch (Exception^ ex) {
+            MessageBox::Show("Error deleting record: " + ex->Message);
+        }
+        finally {
+            connection->Close();
+        }
     }
 
     Void GenerateBills::BackButton_Click(System::Object^ sender, System::EventArgs^ e)

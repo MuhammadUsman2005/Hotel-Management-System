@@ -68,6 +68,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 
 
 
+
 	private:
 		/// <summary>
 		/// Required designer variable.
@@ -169,7 +170,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->panel2->Controls->Add(this->panel4);
 			this->panel2->Controls->Add(this->panel3);
 			this->panel2->Controls->Add(this->label10);
-			this->panel2->Location = System::Drawing::Point(25, 109);
+			this->panel2->Location = System::Drawing::Point(26, 126);
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(784, 623);
 			this->panel2->TabIndex = 85;
@@ -412,7 +413,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 				static_cast<System::Byte>(0)));
 			this->label16->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			this->label16->Location = System::Drawing::Point(836, 109);
+			this->label16->Location = System::Drawing::Point(836, 126);
 			this->label16->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label16->Name = L"label16";
 			this->label16->Size = System::Drawing::Size(740, 64);
@@ -422,9 +423,9 @@ namespace HOTELMANAGEMENTSYSTEM {
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(836, 208);
+			this->dataGridView1->Location = System::Drawing::Point(836, 242);
 			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(740, 524);
+			this->dataGridView1->Size = System::Drawing::Size(740, 380);
 			this->dataGridView1->TabIndex = 86;
 			// 
 			// BackButton
@@ -433,10 +434,10 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->BackButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->BackButton->ForeColor = System::Drawing::SystemColors::Control;
-			this->BackButton->Location = System::Drawing::Point(1200, 752);
+			this->BackButton->Location = System::Drawing::Point(957, 674);
 			this->BackButton->Margin = System::Windows::Forms::Padding(2);
 			this->BackButton->Name = L"BackButton";
-			this->BackButton->Size = System::Drawing::Size(159, 75);
+			this->BackButton->Size = System::Drawing::Size(210, 75);
 			this->BackButton->TabIndex = 87;
 			this->BackButton->Text = L"BACK";
 			this->BackButton->UseVisualStyleBackColor = false;
@@ -449,10 +450,10 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->NextButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->NextButton->ForeColor = System::Drawing::SystemColors::Control;
-			this->NextButton->Location = System::Drawing::Point(1417, 752);
+			this->NextButton->Location = System::Drawing::Point(1238, 674);
 			this->NextButton->Margin = System::Windows::Forms::Padding(2);
 			this->NextButton->Name = L"NextButton";
-			this->NextButton->Size = System::Drawing::Size(159, 75);
+			this->NextButton->Size = System::Drawing::Size(210, 75);
 			this->NextButton->TabIndex = 88;
 			this->NextButton->Text = L"NEXT";
 			this->NextButton->UseVisualStyleBackColor = false;

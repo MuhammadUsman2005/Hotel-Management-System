@@ -91,7 +91,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 				static_cast<System::Byte>(0)));
 			this->label10->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			this->label10->Location = System::Drawing::Point(190, 125);
+			this->label10->Location = System::Drawing::Point(200, 160);
 			this->label10->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(1176, 62);
@@ -113,12 +113,12 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->dataGridView1->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->EnableHeadersVisualStyles = false;
-			this->dataGridView1->Location = System::Drawing::Point(201, 226);
+			this->dataGridView1->Location = System::Drawing::Point(209, 273);
 			this->dataGridView1->Margin = System::Windows::Forms::Padding(2);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(1155, 558);
+			this->dataGridView1->Size = System::Drawing::Size(1155, 414);
 			this->dataGridView1->TabIndex = 46;
 			// 
 			// panel1
@@ -131,7 +131,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->panel1->Location = System::Drawing::Point(0, 0);
 			this->panel1->Margin = System::Windows::Forms::Padding(2);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(1604, 81);
+			this->panel1->Size = System::Drawing::Size(1604, 98);
 			this->panel1->TabIndex = 61;
 			// 
 			// label2
@@ -139,7 +139,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->label2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::Color::White;
-			this->label2->Location = System::Drawing::Point(676, 9);
+			this->label2->Location = System::Drawing::Point(689, 22);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(265, 26);
 			this->label2->TabIndex = 3;
@@ -153,7 +153,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->label4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label4->ForeColor = System::Drawing::Color::White;
-			this->label4->Location = System::Drawing::Point(723, 44);
+			this->label4->Location = System::Drawing::Point(711, 58);
 			this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(220, 26);
@@ -167,7 +167,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->BackButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->BackButton->ForeColor = System::Drawing::SystemColors::Control;
-			this->BackButton->Location = System::Drawing::Point(20, 709);
+			this->BackButton->Location = System::Drawing::Point(33, 612);
 			this->BackButton->Margin = System::Windows::Forms::Padding(2);
 			this->BackButton->Name = L"BackButton";
 			this->BackButton->Size = System::Drawing::Size(159, 75);
@@ -183,7 +183,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->NextButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->NextButton->ForeColor = System::Drawing::SystemColors::Control;
-			this->NextButton->Location = System::Drawing::Point(1375, 709);
+			this->NextButton->Location = System::Drawing::Point(1387, 612);
 			this->NextButton->Margin = System::Windows::Forms::Padding(2);
 			this->NextButton->Name = L"NextButton";
 			this->NextButton->Size = System::Drawing::Size(159, 75);
