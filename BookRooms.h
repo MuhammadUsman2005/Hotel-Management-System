@@ -31,8 +31,60 @@ namespace HOTELMANAGEMENTSYSTEM {
 			/* LoadData() function call kiya hai, jab yeh form load hoga tou saari details load ho jayengi DataGridView mein */
 
 			LoadData();
-
+			this->dataGridView1->SelectionChanged += gcnew System::EventHandler(this, &BookRooms::dataGridView1_SelectionChanged);
+			this->dataGridView1->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
+			this->dataGridView1->MultiSelect = false;
 		}
+
+        // Helper function k zariye se saari values lenge
+
+		/*  Line number 44 se 85 tak, app ko user friendly bananay ka code hai
+		DataGridView ki jis row pe click karen ge, uski details, textboxes mein show ho jayen gi*/
+
+        String^ GetCellValue(DataGridViewRow^ selectedRow, String^ columnName) {
+        if (selectedRow->Cells[columnName]->Value == nullptr)
+        return String::Empty;
+        return selectedRow->Cells[columnName]->Value->ToString();
+        }
+
+        System::Void dataGridView1_SelectionChanged(System::Object^ sender, System::EventArgs^ e) {
+        // Clear controls if no row is selected
+        if (dataGridView1->SelectedRows->Count == 0) {
+        FisrtNameTextBox->Clear();
+        LastNameTextBox->Clear();
+        ResidentialAddressBox->Clear();
+        EmailTextBox->Clear();
+        ContactNumberTextBox->Clear();
+        NationalityComboBox->SelectedIndex = -1;
+        GenderComboBox->SelectedIndex = -1;
+        RoomTypeComboBox->SelectedIndex = -1;
+        RoomNoComboBox->SelectedIndex = -1;
+        dateTimePicker1->Value = DateTime::Now;
+        return;
+        }
+
+        DataGridViewRow^ selectedRow = dataGridView1->SelectedRows[0];
+
+        // Update textboxes
+        FisrtNameTextBox->Text = GetCellValue(selectedRow, "firstName");
+        LastNameTextBox->Text = GetCellValue(selectedRow, "lastName");
+        ResidentialAddressBox->Text = GetCellValue(selectedRow, "address");
+        EmailTextBox->Text = GetCellValue(selectedRow, "email");
+        ContactNumberTextBox->Text = GetCellValue(selectedRow, "mobile");
+
+        // Update comboboxes
+        NationalityComboBox->Text = GetCellValue(selectedRow, "nationality");
+        GenderComboBox->Text = GetCellValue(selectedRow, "gender");
+        RoomTypeComboBox->Text = GetCellValue(selectedRow, "roomType");
+        RoomNoComboBox->Text = GetCellValue(selectedRow, "roomNo");
+
+        // Update datetimepicker
+        DateTime checkinDate;
+        if (DateTime::TryParse(GetCellValue(selectedRow, "checkinDate"), checkinDate)) {
+        dateTimePicker1->Value = checkinDate;
+        }
+        }
+	
 		
 	protected:
 		/// <summary>
@@ -105,6 +157,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 	private: System::Windows::Forms::ComboBox^ NationalityComboBox;
 
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
+
 
 
 
@@ -381,7 +434,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->label2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::Color::White;
-			this->label2->Location = System::Drawing::Point(744, 44);
+			this->label2->Location = System::Drawing::Point(706, 44);
 			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(190, 26);
@@ -550,12 +603,12 @@ namespace HOTELMANAGEMENTSYSTEM {
 			dataGridViewCellStyle1->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
 			this->dataGridView1->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
 			this->dataGridView1->EnableHeadersVisualStyles = false;
-			this->dataGridView1->Location = System::Drawing::Point(545, 102);
+			this->dataGridView1->Location = System::Drawing::Point(545, 108);
 			this->dataGridView1->Margin = System::Windows::Forms::Padding(2);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 90;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(1029, 516);
+			this->dataGridView1->Size = System::Drawing::Size(1029, 499);
 			this->dataGridView1->TabIndex = 50;
 			// 
 			// BookRooms

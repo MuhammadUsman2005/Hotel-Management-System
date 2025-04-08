@@ -21,6 +21,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 			//
 			//TODO: Add the constructor code here
 			//
+			LoadData();
 		}
 
 	protected:
@@ -34,6 +35,11 @@ namespace HOTELMANAGEMENTSYSTEM {
 				delete components;
 			}
 		}
+	protected:
+		void LoadData();
+
+
+
 	private: System::Windows::Forms::Panel^ panel1;
 	protected:
 	private: System::Windows::Forms::Label^ label8;
@@ -62,11 +68,12 @@ namespace HOTELMANAGEMENTSYSTEM {
 
 
 
+
 	private:
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -163,7 +170,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->panel2->Controls->Add(this->panel4);
 			this->panel2->Controls->Add(this->panel3);
 			this->panel2->Controls->Add(this->label10);
-			this->panel2->Location = System::Drawing::Point(25, 109);
+			this->panel2->Location = System::Drawing::Point(26, 126);
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(784, 623);
 			this->panel2->TabIndex = 85;
@@ -283,7 +290,6 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->label7->TabIndex = 37;
 			this->label7->Text = L"PRICE PER NIGHT";
 			this->label7->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			this->label7->Click += gcnew System::EventHandler(this, &CheckAvailability::label7_Click);
 			// 
 			// label5
 			// 
@@ -407,7 +413,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 				static_cast<System::Byte>(0)));
 			this->label16->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			this->label16->Location = System::Drawing::Point(836, 109);
+			this->label16->Location = System::Drawing::Point(836, 126);
 			this->label16->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label16->Name = L"label16";
 			this->label16->Size = System::Drawing::Size(740, 64);
@@ -417,11 +423,10 @@ namespace HOTELMANAGEMENTSYSTEM {
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(836, 208);
+			this->dataGridView1->Location = System::Drawing::Point(836, 242);
 			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(740, 524);
+			this->dataGridView1->Size = System::Drawing::Size(740, 380);
 			this->dataGridView1->TabIndex = 86;
-			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &CheckAvailability::dataGridView1_CellContentClick);
 			// 
 			// BackButton
 			// 
@@ -429,13 +434,14 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->BackButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->BackButton->ForeColor = System::Drawing::SystemColors::Control;
-			this->BackButton->Location = System::Drawing::Point(1200, 752);
+			this->BackButton->Location = System::Drawing::Point(957, 674);
 			this->BackButton->Margin = System::Windows::Forms::Padding(2);
 			this->BackButton->Name = L"BackButton";
-			this->BackButton->Size = System::Drawing::Size(159, 75);
+			this->BackButton->Size = System::Drawing::Size(210, 75);
 			this->BackButton->TabIndex = 87;
 			this->BackButton->Text = L"BACK";
 			this->BackButton->UseVisualStyleBackColor = false;
+			this->BackButton->Click += gcnew System::EventHandler(this, &CheckAvailability::BackButton_Click_1);
 			// 
 			// NextButton
 			// 
@@ -444,13 +450,14 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->NextButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->NextButton->ForeColor = System::Drawing::SystemColors::Control;
-			this->NextButton->Location = System::Drawing::Point(1417, 752);
+			this->NextButton->Location = System::Drawing::Point(1238, 674);
 			this->NextButton->Margin = System::Windows::Forms::Padding(2);
 			this->NextButton->Name = L"NextButton";
-			this->NextButton->Size = System::Drawing::Size(159, 75);
+			this->NextButton->Size = System::Drawing::Size(210, 75);
 			this->NextButton->TabIndex = 88;
 			this->NextButton->Text = L"NEXT";
 			this->NextButton->UseVisualStyleBackColor = false;
+			this->NextButton->Click += gcnew System::EventHandler(this, &CheckAvailability::NextButton_Click_1);
 			// 
 			// CheckAvailability
 			// 
@@ -465,7 +472,6 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->Controls->Add(this->panel1);
 			this->Name = L"CheckAvailability";
 			this->Text = L"CheckAvailability";
-			this->Load += gcnew System::EventHandler(this, &CheckAvailability::CheckAvailability_Load);
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
 			this->panel2->ResumeLayout(false);
@@ -479,11 +485,19 @@ namespace HOTELMANAGEMENTSYSTEM {
 
 		}
 #pragma endregion
-	private: System::Void label7_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		void BackButton_Click(System::Object^ sender, System::EventArgs^ e);
+
+		void NextButton_Click(System::Object^ sender, System::EventArgs^ e);
+
+
+	private: System::Void BackButton_Click_1(System::Object^ sender, System::EventArgs^ e) {
+		BackButton_Click(sender, e);
 	}
-private: System::Void CheckAvailability_Load(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-}
-};
+
+	private: System::Void NextButton_Click_1(System::Object^ sender, System::EventArgs^ e) {
+		NextButton_Click(sender, e);
+	}
+
+	};
 }

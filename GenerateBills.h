@@ -1,4 +1,7 @@
 #pragma once
+#include "GenerateBills.h"
+#include "Dashboard.h"
+#include "ViewDetails.h"
 
 namespace HOTELMANAGEMENTSYSTEM {
 
@@ -18,10 +21,14 @@ namespace HOTELMANAGEMENTSYSTEM {
 		GenerateBills(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
-            
+            // In InitializeComponent() or form constructor
+            this->roomPricePerNightComboBox->Items->Clear();
+            this->roomPricePerNightComboBox->Items->AddRange(gcnew array<String^> {
+                 "$200.00 (SUITE)",
+                 "$150.00 (DELUXE)",
+                 "$100.00 (STANDARD)"
+                  });
+          
 		}
 
 	protected:
@@ -35,11 +42,11 @@ namespace HOTELMANAGEMENTSYSTEM {
 				delete components;
 			}
 		}
-    private: System::Windows::Forms::DateTimePicker^ dateTimePicker1;
+    private: System::Windows::Forms::DateTimePicker^ checkInDatePicker;
     protected:
-    private: System::Windows::Forms::ComboBox^ comboBox4;
+    private: System::Windows::Forms::ComboBox^ roomNumberComboBox;
     private: System::Windows::Forms::Label^ label13;
-    private: System::Windows::Forms::ComboBox^ comboBox3;
+    private: System::Windows::Forms::ComboBox^ roomTypeComboBox;
 
 
 
@@ -49,27 +56,26 @@ namespace HOTELMANAGEMENTSYSTEM {
     private: System::Windows::Forms::Label^ label14;
     private: System::Windows::Forms::Label^ label1;
 
-
     private: System::Windows::Forms::TextBox^ textBox3;
     private: System::Windows::Forms::Label^ label5;
 
 
     private: System::Windows::Forms::Label^ label3;
     private: System::Windows::Forms::Label^ label6;
-    private: System::Windows::Forms::DateTimePicker^ dateTimePicker2;
+    private: System::Windows::Forms::DateTimePicker^ checkOutDatePicker;
     private: System::Windows::Forms::Label^ label9;
     private: System::Windows::Forms::Label^ label4;
-    private: System::Windows::Forms::TextBox^ textBox2;
+    private: System::Windows::Forms::TextBox^ daysStayedTextbox;
     private: System::Windows::Forms::Label^ label7;
-    private: System::Windows::Forms::ComboBox^ comboBox1;
+    private: System::Windows::Forms::ComboBox^ roomPricePerNightComboBox;
     private: System::Windows::Forms::Button^ GenerateBillButton;
 
-    private: System::Windows::Forms::Label^ label10;
+    private: System::Windows::Forms::Label^ TotalBillLabel;
 
     private: System::Windows::Forms::Button^ HomeButton;
 
     private: System::Windows::Forms::Button^ BackButton;
-    private: System::Windows::Forms::TextBox^ textBox1;
+    private: System::Windows::Forms::TextBox^ bookingIDTextbox;
 
 
 
@@ -81,7 +87,11 @@ namespace HOTELMANAGEMENTSYSTEM {
 		System::ComponentModel::Container^ components;
 
 		// Declare UI components
-
+        // Helper methods
+        void LoadBookingDetails(String^ bookingID);
+        void CalculateDaysStayed();
+        void CalculateTotalBill();
+        void SaveBillToDatabase();
 
 
 #pragma region Windows Form Designer generated code
@@ -90,11 +100,11 @@ namespace HOTELMANAGEMENTSYSTEM {
 		/// the contents of this method with the code editor.
 		/// </summary>
 		void InitializeComponent(void)
-		{
-            this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
-            this->comboBox4 = (gcnew System::Windows::Forms::ComboBox());
+	{
+            this->checkInDatePicker = (gcnew System::Windows::Forms::DateTimePicker());
+            this->roomNumberComboBox = (gcnew System::Windows::Forms::ComboBox());
             this->label13 = (gcnew System::Windows::Forms::Label());
-            this->comboBox3 = (gcnew System::Windows::Forms::ComboBox());
+            this->roomTypeComboBox = (gcnew System::Windows::Forms::ComboBox());
             this->panel1 = (gcnew System::Windows::Forms::Panel());
             this->label8 = (gcnew System::Windows::Forms::Label());
             this->label2 = (gcnew System::Windows::Forms::Label());
@@ -104,45 +114,45 @@ namespace HOTELMANAGEMENTSYSTEM {
             this->label5 = (gcnew System::Windows::Forms::Label());
             this->label3 = (gcnew System::Windows::Forms::Label());
             this->label6 = (gcnew System::Windows::Forms::Label());
-            this->dateTimePicker2 = (gcnew System::Windows::Forms::DateTimePicker());
+            this->checkOutDatePicker = (gcnew System::Windows::Forms::DateTimePicker());
             this->label9 = (gcnew System::Windows::Forms::Label());
             this->label4 = (gcnew System::Windows::Forms::Label());
-            this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+            this->daysStayedTextbox = (gcnew System::Windows::Forms::TextBox());
             this->label7 = (gcnew System::Windows::Forms::Label());
-            this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+            this->roomPricePerNightComboBox = (gcnew System::Windows::Forms::ComboBox());
             this->GenerateBillButton = (gcnew System::Windows::Forms::Button());
-            this->label10 = (gcnew System::Windows::Forms::Label());
+            this->TotalBillLabel = (gcnew System::Windows::Forms::Label());
             this->HomeButton = (gcnew System::Windows::Forms::Button());
             this->BackButton = (gcnew System::Windows::Forms::Button());
-            this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+            this->bookingIDTextbox = (gcnew System::Windows::Forms::TextBox());
             this->panel1->SuspendLayout();
             this->SuspendLayout();
             // 
             // dateTimePicker1
             // 
-            this->dateTimePicker1->CalendarFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular,
+            this->checkInDatePicker->CalendarFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular,
                 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-            this->dateTimePicker1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular,
+            this->checkInDatePicker->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular,
                 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-            this->dateTimePicker1->Location = System::Drawing::Point(754, 488);
-            this->dateTimePicker1->Name = L"dateTimePicker1";
-            this->dateTimePicker1->Size = System::Drawing::Size(319, 29);
-            this->dateTimePicker1->TabIndex = 92;
+            this->checkInDatePicker->Location = System::Drawing::Point(754, 488);
+            this->checkInDatePicker->Name = L"dateTimePicker1";
+            this->checkInDatePicker->Size = System::Drawing::Size(319, 29);
+            this->checkInDatePicker->TabIndex = 92;
             // 
             // comboBox4
             // 
-            this->comboBox4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+            this->roomNumberComboBox->Font = (gcnew System::Drawing::Font(L"Century Gothic", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->comboBox4->FormattingEnabled = true;
-            this->comboBox4->Items->AddRange(gcnew cli::array< System::Object^  >(8) {
+            this->roomNumberComboBox->FormattingEnabled = true;
+            this->roomNumberComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(8) {
                 L"101 ", L"102 ", L"103 ", L"104 ", L"105 ", L"106 ",
                     L"107 ", L"108 "
             });
-            this->comboBox4->Location = System::Drawing::Point(754, 336);
-            this->comboBox4->Margin = System::Windows::Forms::Padding(2);
-            this->comboBox4->Name = L"comboBox4";
-            this->comboBox4->Size = System::Drawing::Size(319, 30);
-            this->comboBox4->TabIndex = 90;
+            this->roomNumberComboBox->Location = System::Drawing::Point(754, 336);
+            this->roomNumberComboBox->Margin = System::Windows::Forms::Padding(2);
+            this->roomNumberComboBox->Name = L"comboBox4";
+            this->roomNumberComboBox->Size = System::Drawing::Size(319, 30);
+            this->roomNumberComboBox->TabIndex = 90;
             // 
             // label13
             // 
@@ -159,15 +169,15 @@ namespace HOTELMANAGEMENTSYSTEM {
             // 
             // comboBox3
             // 
-            this->comboBox3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+            this->roomTypeComboBox->Font = (gcnew System::Drawing::Font(L"Century Gothic", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->comboBox3->FormattingEnabled = true;
-            this->comboBox3->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"SUITE ($ 200.0)", L"DELUXE ($ 150.0)", L"STANDARD ($ 100.0)" });
-            this->comboBox3->Location = System::Drawing::Point(754, 268);
-            this->comboBox3->Margin = System::Windows::Forms::Padding(2);
-            this->comboBox3->Name = L"comboBox3";
-            this->comboBox3->Size = System::Drawing::Size(319, 30);
-            this->comboBox3->TabIndex = 88;
+            this->roomTypeComboBox->FormattingEnabled = true;
+            this->roomTypeComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"SUITE ($ 200.0)", L"DELUXE ($ 150.0)", L"STANDARD ($ 100.0)" });
+            this->roomTypeComboBox->Location = System::Drawing::Point(754, 268);
+            this->roomTypeComboBox->Margin = System::Windows::Forms::Padding(2);
+            this->roomTypeComboBox->Name = L"comboBox3";
+            this->roomTypeComboBox->Size = System::Drawing::Size(319, 30);
+            this->roomTypeComboBox->TabIndex = 88;
             // 
             // panel1
             // 
@@ -291,14 +301,15 @@ namespace HOTELMANAGEMENTSYSTEM {
             // 
             // dateTimePicker2
             // 
-            this->dateTimePicker2->CalendarFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular,
+            this->checkOutDatePicker->CalendarFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular,
                 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-            this->dateTimePicker2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular,
+            this->checkOutDatePicker->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular,
                 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-            this->dateTimePicker2->Location = System::Drawing::Point(754, 570);
-            this->dateTimePicker2->Name = L"dateTimePicker2";
-            this->dateTimePicker2->Size = System::Drawing::Size(319, 29);
-            this->dateTimePicker2->TabIndex = 94;
+            this->checkOutDatePicker->Location = System::Drawing::Point(754, 570);
+            this->checkOutDatePicker->Name = L"dateTimePicker2";
+            this->checkOutDatePicker->Size = System::Drawing::Size(319, 29);
+            this->checkOutDatePicker->TabIndex = 94;
+            this->checkOutDatePicker->ValueChanged += gcnew System::EventHandler(this, &GenerateBills::dateTimePicker2_ValueChanged_1);
             // 
             // label9
             // 
@@ -332,14 +343,14 @@ namespace HOTELMANAGEMENTSYSTEM {
             // 
             // textBox2
             // 
-            this->textBox2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+            this->daysStayedTextbox->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->textBox2->Location = System::Drawing::Point(754, 649);
-            this->textBox2->Margin = System::Windows::Forms::Padding(2);
-            this->textBox2->Multiline = true;
-            this->textBox2->Name = L"textBox2";
-            this->textBox2->Size = System::Drawing::Size(319, 32);
-            this->textBox2->TabIndex = 97;
+            this->daysStayedTextbox->Location = System::Drawing::Point(754, 649);
+            this->daysStayedTextbox->Margin = System::Windows::Forms::Padding(2);
+            this->daysStayedTextbox->Multiline = true;
+            this->daysStayedTextbox->Name = L"textBox2";
+            this->daysStayedTextbox->Size = System::Drawing::Size(319, 32);
+            this->daysStayedTextbox->TabIndex = 97;
             // 
             // label7
             // 
@@ -357,15 +368,15 @@ namespace HOTELMANAGEMENTSYSTEM {
             // 
             // comboBox1
             // 
-            this->comboBox1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+            this->roomPricePerNightComboBox->Font = (gcnew System::Drawing::Font(L"Century Gothic", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->comboBox1->FormattingEnabled = true;
-            this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"$ 200.0 (SUITE)", L"$ 150.0 (DELUXE)", L"$ 100.0 (STANDARD)" });
-            this->comboBox1->Location = System::Drawing::Point(754, 405);
-            this->comboBox1->Margin = System::Windows::Forms::Padding(2);
-            this->comboBox1->Name = L"comboBox1";
-            this->comboBox1->Size = System::Drawing::Size(319, 30);
-            this->comboBox1->TabIndex = 99;
+            this->roomPricePerNightComboBox->FormattingEnabled = true;
+            this->roomPricePerNightComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"$ 200.0 (SUITE)", L"$ 150.0 (DELUXE)", L"$ 100.0 (STANDARD)" });
+            this->roomPricePerNightComboBox->Location = System::Drawing::Point(754, 405);
+            this->roomPricePerNightComboBox->Margin = System::Windows::Forms::Padding(2);
+            this->roomPricePerNightComboBox->Name = L"comboBox1";
+            this->roomPricePerNightComboBox->Size = System::Drawing::Size(319, 30);
+            this->roomPricePerNightComboBox->TabIndex = 99;
             // 
             // GenerateBillButton
             // 
@@ -385,19 +396,19 @@ namespace HOTELMANAGEMENTSYSTEM {
             // 
             // label10
             // 
-            this->label10->AutoSize = true;
-            this->label10->BackColor = System::Drawing::SystemColors::ButtonHighlight;
-            this->label10->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-            this->label10->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+            this->TotalBillLabel->AutoSize = true;
+            this->TotalBillLabel->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+            this->TotalBillLabel->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+            this->TotalBillLabel->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label10->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+            this->TotalBillLabel->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
                 static_cast<System::Int32>(static_cast<System::Byte>(185)));
-            this->label10->Location = System::Drawing::Point(806, 745);
-            this->label10->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-            this->label10->Name = L"label10";
-            this->label10->Size = System::Drawing::Size(204, 28);
-            this->label10->TabIndex = 101;
-            this->label10->Text = L"YOUR TOTAL BILL : ";
+            this->TotalBillLabel->Location = System::Drawing::Point(806, 745);
+            this->TotalBillLabel->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+            this->TotalBillLabel->Name = L"label10";
+            this->TotalBillLabel->Size = System::Drawing::Size(204, 28);
+            this->TotalBillLabel->TabIndex = 101;
+            this->TotalBillLabel->Text = L"YOUR TOTAL BILL : ";
             // 
             // HomeButton
             // 
@@ -431,37 +442,37 @@ namespace HOTELMANAGEMENTSYSTEM {
             // 
             // textBox1
             // 
-            this->textBox1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+            this->bookingIDTextbox->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->textBox1->Location = System::Drawing::Point(754, 197);
-            this->textBox1->Margin = System::Windows::Forms::Padding(2);
-            this->textBox1->Multiline = true;
-            this->textBox1->Name = L"textBox1";
-            this->textBox1->Size = System::Drawing::Size(319, 32);
-            this->textBox1->TabIndex = 105;
-            this->textBox1->TextChanged += gcnew System::EventHandler(this, &GenerateBills::textBox1_TextChanged);
+            this->bookingIDTextbox->Location = System::Drawing::Point(754, 197);
+            this->bookingIDTextbox->Margin = System::Windows::Forms::Padding(2);
+            this->bookingIDTextbox->Multiline = true;
+            this->bookingIDTextbox->Name = L"textBox1";
+            this->bookingIDTextbox->Size = System::Drawing::Size(319, 32);
+            this->bookingIDTextbox->TabIndex = 105;
+            this->bookingIDTextbox->TextChanged += gcnew System::EventHandler(this, &GenerateBills::textBox1_TextChanged_1);
             // 
             // GenerateBills
             // 
             this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
             this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
             this->ClientSize = System::Drawing::Size(1604, 881);
-            this->Controls->Add(this->textBox1);
+            this->Controls->Add(this->bookingIDTextbox);
             this->Controls->Add(this->BackButton);
             this->Controls->Add(this->HomeButton);
-            this->Controls->Add(this->label10);
+            this->Controls->Add(this->TotalBillLabel);
             this->Controls->Add(this->GenerateBillButton);
-            this->Controls->Add(this->comboBox1);
+            this->Controls->Add(this->roomPricePerNightComboBox);
             this->Controls->Add(this->label7);
-            this->Controls->Add(this->textBox2);
+            this->Controls->Add(this->daysStayedTextbox);
             this->Controls->Add(this->label4);
             this->Controls->Add(this->label9);
-            this->Controls->Add(this->dateTimePicker2);
+            this->Controls->Add(this->checkOutDatePicker);
             this->Controls->Add(this->label6);
-            this->Controls->Add(this->dateTimePicker1);
-            this->Controls->Add(this->comboBox4);
+            this->Controls->Add(this->checkInDatePicker);
+            this->Controls->Add(this->roomNumberComboBox);
             this->Controls->Add(this->label13);
-            this->Controls->Add(this->comboBox3);
+            this->Controls->Add(this->roomTypeComboBox);
             this->Controls->Add(this->panel1);
             this->Controls->Add(this->label14);
             this->Controls->Add(this->label1);
@@ -477,33 +488,39 @@ namespace HOTELMANAGEMENTSYSTEM {
 
         }
 #pragma endregion
-
         
     
-            Void GenerateBillButton_Click(System::Object^ sender, System::EventArgs^ e);
-
-            Void BackButton_Click(System::Object^ sender, System::EventArgs^ e);
-
-            Void HomeButton_Click(System::Object^ sender, System::EventArgs^ e);
-
-            Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e);
-
-
-    private: System::Void HomeButton_Click_1(System::Object^ sender, System::EventArgs^ e) {
-	HomeButton_Click(sender, e);
-    }
-    
-    private: System::Void GenerateBillButton_Click_1(System::Object^ sender, System::EventArgs^ e) {
-	GenerateBillButton_Click(sender, e);
-    }
-
-    private: System::Void BackButton_Click_1(System::Object^ sender, System::EventArgs^ e) {
-	BackButton_Click(sender, e);
-    }
+      public:
+        // Event handlers
+        Void GenerateBillButton_Click(System::Object^ sender, System::EventArgs^ e);
+        Void BackButton_Click(System::Object^ sender, System::EventArgs^ e);
+        Void HomeButton_Click(System::Object^ sender, System::EventArgs^ e);
+        Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e);
+        Void dateTimePicker2_ValueChanged(System::Object^ sender, System::EventArgs^ e);
 
 
+        private: System::Void GenerateBillButton_Click_1(System::Object^ sender, System::EventArgs^ e) {
+			GenerateBillButton_Click(sender, e);
+        }
 
 
+        private: System::Void BackButton_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	        BackButton_Click(sender, e);
+        }
+        
+        private: System::Void HomeButton_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	        HomeButton_Click(sender, e);
+        }
 
+        private: System::Void dateTimePicker2_ValueChanged_1(System::Object^ sender, System::EventArgs^ e) {
+	        dateTimePicker2_ValueChanged(sender, e);
+        }
+
+
+        private: System::Void textBox1_TextChanged_1(System::Object^ sender, System::EventArgs^ e) {
+	        textBox1_TextChanged(sender, e);
+        }
 };
+
 }
+

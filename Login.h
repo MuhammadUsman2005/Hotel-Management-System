@@ -47,6 +47,11 @@ namespace HOTELMANAGEMENTSYSTEM {
 
 
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
+	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::PictureBox^ pictureBox3;
+	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::TextBox^ textBoxPassword;
 		   void CheckLogin(System::Object^ sender, System::EventArgs^ e);
 		   
@@ -57,11 +62,11 @@ namespace HOTELMANAGEMENTSYSTEM {
 	private: System::Windows::Forms::TextBox^ textBoxUserName;
 
 	private: System::Windows::Forms::Label^ label4;
-	private: System::Windows::Forms::Panel^ panel1;
-	private: System::Windows::Forms::PictureBox^ pictureBox3;
-	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::Label^ label1;
+
+
+
+
+
 
 	private:
 		/// <summary>
@@ -82,27 +87,27 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->ClearButton = (gcnew System::Windows::Forms::Button());
 			this->LoginButton = (gcnew System::Windows::Forms::Button());
 			this->panel4 = (gcnew System::Windows::Forms::Panel());
+			this->ShowPasswordButton = (gcnew System::Windows::Forms::Button());
 			this->HidePasswordButton = (gcnew System::Windows::Forms::Button());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
-			this->ShowPasswordButton = (gcnew System::Windows::Forms::Button());
 			this->textBoxPassword = (gcnew System::Windows::Forms::TextBox());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
 			this->textBoxUserName = (gcnew System::Windows::Forms::TextBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->panel4->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->panel3->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->BeginInit();
-			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
+			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// ClearButton
@@ -152,6 +157,22 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->panel4->Size = System::Drawing::Size(481, 64);
 			this->panel4->TabIndex = 10;
 			// 
+			// ShowPasswordButton
+			// 
+			this->ShowPasswordButton->BackColor = System::Drawing::Color::White;
+			this->ShowPasswordButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ShowPasswordButton.BackgroundImage")));
+			this->ShowPasswordButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->ShowPasswordButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->ShowPasswordButton->ForeColor = System::Drawing::Color::Black;
+			this->ShowPasswordButton->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ShowPasswordButton.Image")));
+			this->ShowPasswordButton->Location = System::Drawing::Point(413, 8);
+			this->ShowPasswordButton->Margin = System::Windows::Forms::Padding(2);
+			this->ShowPasswordButton->Name = L"ShowPasswordButton";
+			this->ShowPasswordButton->Size = System::Drawing::Size(53, 47);
+			this->ShowPasswordButton->TabIndex = 9;
+			this->ShowPasswordButton->UseVisualStyleBackColor = false;
+			this->ShowPasswordButton->Click += gcnew System::EventHandler(this, &Login::ShowPasswordButton_Click);
+			// 
 			// HidePasswordButton
 			// 
 			this->HidePasswordButton->BackColor = System::Drawing::Color::White;
@@ -177,22 +198,6 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox2->TabIndex = 3;
 			this->pictureBox2->TabStop = false;
-			// 
-			// ShowPasswordButton
-			// 
-			this->ShowPasswordButton->BackColor = System::Drawing::Color::White;
-			this->ShowPasswordButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ShowPasswordButton.BackgroundImage")));
-			this->ShowPasswordButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
-			this->ShowPasswordButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->ShowPasswordButton->ForeColor = System::Drawing::Color::Black;
-			this->ShowPasswordButton->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ShowPasswordButton.Image")));
-			this->ShowPasswordButton->Location = System::Drawing::Point(413, 8);
-			this->ShowPasswordButton->Margin = System::Windows::Forms::Padding(2);
-			this->ShowPasswordButton->Name = L"ShowPasswordButton";
-			this->ShowPasswordButton->Size = System::Drawing::Size(53, 47);
-			this->ShowPasswordButton->TabIndex = 9;
-			this->ShowPasswordButton->UseVisualStyleBackColor = false;
-			this->ShowPasswordButton->Click += gcnew System::EventHandler(this, &Login::ShowPasswordButton_Click);
 			// 
 			// textBoxPassword
 			// 
@@ -267,44 +272,18 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->label4->Text = L"Login To Your Account";
 			this->label4->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			// 
-			// panel1
+			// label1
 			// 
-			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
-				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			this->panel1->Controls->Add(this->pictureBox3);
-			this->panel1->Controls->Add(this->label3);
-			this->panel1->Controls->Add(this->label2);
-			this->panel1->Controls->Add(this->label1);
-			this->panel1->Dock = System::Windows::Forms::DockStyle::Left;
-			this->panel1->Location = System::Drawing::Point(0, 0);
-			this->panel1->Margin = System::Windows::Forms::Padding(2);
-			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(427, 740);
-			this->panel1->TabIndex = 14;
-			// 
-			// pictureBox3
-			// 
-			this->pictureBox3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.Image")));
-			this->pictureBox3->Location = System::Drawing::Point(73, 126);
-			this->pictureBox3->Margin = System::Windows::Forms::Padding(2);
-			this->pictureBox3->Name = L"pictureBox3";
-			this->pictureBox3->Size = System::Drawing::Size(278, 203);
-			this->pictureBox3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-			this->pictureBox3->TabIndex = 3;
-			this->pictureBox3->TabStop = false;
-			// 
-			// label3
-			// 
-			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 24, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 24, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->ForeColor = System::Drawing::Color::White;
-			this->label3->Location = System::Drawing::Point(142, 576);
-			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(130, 38);
-			this->label3->TabIndex = 2;
-			this->label3->Text = L"SYSTEM";
+			this->label1->ForeColor = System::Drawing::Color::White;
+			this->label1->Location = System::Drawing::Point(67, 448);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(285, 38);
+			this->label1->TabIndex = 0;
+			this->label1->Text = L"WELCOME TO THE";
 			// 
 			// label2
 			// 
@@ -319,18 +298,44 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->label2->TabIndex = 1;
 			this->label2->Text = L"HOTEL MANAGEMENT";
 			// 
-			// label1
+			// label3
 			// 
-			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 24, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label3->AutoSize = true;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 24, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->ForeColor = System::Drawing::Color::White;
-			this->label1->Location = System::Drawing::Point(67, 448);
-			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(285, 38);
-			this->label1->TabIndex = 0;
-			this->label1->Text = L"WELCOME TO THE";
+			this->label3->ForeColor = System::Drawing::Color::White;
+			this->label3->Location = System::Drawing::Point(142, 576);
+			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(130, 38);
+			this->label3->TabIndex = 2;
+			this->label3->Text = L"SYSTEM";
+			// 
+			// pictureBox3
+			// 
+			this->pictureBox3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.Image")));
+			this->pictureBox3->Location = System::Drawing::Point(73, 126);
+			this->pictureBox3->Margin = System::Windows::Forms::Padding(2);
+			this->pictureBox3->Name = L"pictureBox3";
+			this->pictureBox3->Size = System::Drawing::Size(278, 203);
+			this->pictureBox3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox3->TabIndex = 3;
+			this->pictureBox3->TabStop = false;
+			// 
+			// panel1
+			// 
+			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(185)));
+			this->panel1->Controls->Add(this->pictureBox3);
+			this->panel1->Controls->Add(this->label3);
+			this->panel1->Controls->Add(this->label2);
+			this->panel1->Controls->Add(this->label1);
+			this->panel1->Dock = System::Windows::Forms::DockStyle::Left;
+			this->panel1->Location = System::Drawing::Point(0, 0);
+			this->panel1->Margin = System::Windows::Forms::Padding(2);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(427, 740);
+			this->panel1->TabIndex = 14;
 			// 
 			// Login
 			// 
@@ -352,9 +357,9 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->panel3->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 

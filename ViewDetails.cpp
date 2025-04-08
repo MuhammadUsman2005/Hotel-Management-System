@@ -1,8 +1,8 @@
 #include "ViewDetails.h"
-#include <string>
+#include <string.h>
 #include "BookRooms.h"
 #include "CheckAvailability.h"
-#include "GenerateBills.h"
+
 
 
 using namespace System::Data::OleDb;
@@ -30,12 +30,17 @@ void ViewDetails::LoadData()
         String^ connString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\Hotel Management System\\HOTEL MANAGEMENT SYSTEM\\project resources\\database\\connection.accdb;";
         OleDbConnection^ conn = gcnew OleDbConnection(connString);
         conn->Open();
-        OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter("SELECT b.bookingID, b.checkinDate, c.firstName, c.lastName, c.address, c.mobile, b.roomNo, c.gender, "
-                "c.email, c.nationality, r.roomType "
-                "FROM ((bookings b INNER JOIN customers c ON c.bookingID = b.bookingID) "
-                "INNER JOIN details d ON (d.bookingID = b.bookingID AND d.roomNo = b.roomNo))"
-                "INNER JOIN rooms r ON r.roomNo = b.roomNo;", conn);
-        
+
+		// SQL Queries
+
+        OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(
+            "SELECT b.bookingID, b.checkinDate, bl.checkoutDate, c.firstName, c.lastName, " +
+            "c.address, c.mobile, b.roomNo, c.gender, c.email, c.nationality, r.roomType " +
+            "FROM ((bookings b " +
+            "INNER JOIN (customers c INNER JOIN details d ON c.bookingID = d.bookingID) ON b.bookingID = c.bookingID) " +
+            "INNER JOIN rooms r ON b.roomNo = r.roomNo) " +
+            "LEFT JOIN bills bl ON b.bookingID = bl.bookingID",conn);
+
 
         DataTable^ dt = gcnew DataTable();
         adapter->Fill(dt);
@@ -57,7 +62,7 @@ void ViewDetails::BackButton_Click(System::Object^ sender, System::EventArgs^ e)
 }
 
 void ViewDetails::NextButton_Click(System::Object^ sender, System::EventArgs^ e) {
-    GenerateBills^ generateBills = gcnew GenerateBills();
-    generateBills->Show();
+    CheckAvailability^ checkAvailability = gcnew CheckAvailability();
+    checkAvailability->Show();
     this->Hide();
 }

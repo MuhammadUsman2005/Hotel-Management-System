@@ -198,10 +198,9 @@ namespace HOTELMANAGEMENTSYSTEM {
         }
     }
 
-
+   
     /* "DELETE" button ka event handler initialize kiya hai, jab DELETE wala button click hoga,
     tou curly brackets k andar likhi hui saari cheezen step by step execute hongi.*/
-
 
 
     void BookRooms::DeleteButton_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -278,7 +277,6 @@ namespace HOTELMANAGEMENTSYSTEM {
         MessageBoxIcon icon = MessageBoxIcon::Question;
         MessageBoxButtons buttons = MessageBoxButtons::YesNo;
         if (MessageBox::Show("Are you sure you want to go back to dashboard?", "Confirm", buttons, icon) == System::Windows::Forms::DialogResult::Yes) {
-
             Dashboard^ dashboard = gcnew Dashboard();
             dashboard->Show();
             this->Hide();
