@@ -24,7 +24,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 
             // "POORI APPLICATION KA MOST IMPORTANT PART HAI YEH WALI QUERY KYUN KE IS MEIN INNER JOINS BHI HAIN " 
 
-             String^ query = "SELECT b.bookingID, b.checkinDate, c.firstName, c.lastName, c.address, c.mobile, b.roomNo, c.gender, "
+            String^ query = "SELECT b.bookingID, b.checkinDate, c.firstName, c.lastName, c.address, c.mobile, b.roomNo, c.gender, "
                 "c.email, c.nationality, r.roomType "
                 "FROM ((bookings b INNER JOIN customers c ON c.bookingID = b.bookingID) "
                 "INNER JOIN details d ON (d.bookingID = b.bookingID AND d.roomNo = b.roomNo))"
@@ -43,6 +43,7 @@ namespace HOTELMANAGEMENTSYSTEM {
         catch (Exception^ ex) {
             MessageBox::Show("Error loading data: " + ex->Message);
         }
+
         finally {
             connection->Close();
         }

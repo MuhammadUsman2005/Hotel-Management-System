@@ -91,7 +91,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 				static_cast<System::Byte>(0)));
 			this->label10->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			this->label10->Location = System::Drawing::Point(200, 160);
+			this->label10->Location = System::Drawing::Point(214, 163);
 			this->label10->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(1176, 62);
@@ -101,24 +101,25 @@ namespace HOTELMANAGEMENTSYSTEM {
 			// dataGridView1
 			// 
 			this->dataGridView1->AllowUserToOrderColumns = true;
+			this->dataGridView1->BackgroundColor = System::Drawing::SystemColors::InactiveBorder;
 			dataGridViewCellStyle1->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
 			dataGridViewCellStyle1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			dataGridViewCellStyle1->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			dataGridViewCellStyle1->ForeColor = System::Drawing::SystemColors::Window;
 			dataGridViewCellStyle1->SelectionBackColor = System::Drawing::SystemColors::Highlight;
 			dataGridViewCellStyle1->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
 			dataGridViewCellStyle1->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
 			this->dataGridView1->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->EnableHeadersVisualStyles = false;
-			this->dataGridView1->Location = System::Drawing::Point(209, 273);
+			this->dataGridView1->Location = System::Drawing::Point(173, 273);
 			this->dataGridView1->Margin = System::Windows::Forms::Padding(2);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(1155, 414);
+			this->dataGridView1->Size = System::Drawing::Size(1254, 433);
 			this->dataGridView1->TabIndex = 46;
 			// 
 			// panel1
@@ -167,10 +168,10 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->BackButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->BackButton->ForeColor = System::Drawing::SystemColors::Control;
-			this->BackButton->Location = System::Drawing::Point(33, 612);
+			this->BackButton->Location = System::Drawing::Point(11, 631);
 			this->BackButton->Margin = System::Windows::Forms::Padding(2);
 			this->BackButton->Name = L"BackButton";
-			this->BackButton->Size = System::Drawing::Size(159, 75);
+			this->BackButton->Size = System::Drawing::Size(140, 75);
 			this->BackButton->TabIndex = 62;
 			this->BackButton->Text = L"BACK";
 			this->BackButton->UseVisualStyleBackColor = false;
@@ -183,10 +184,10 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->NextButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->NextButton->ForeColor = System::Drawing::SystemColors::Control;
-			this->NextButton->Location = System::Drawing::Point(1387, 612);
+			this->NextButton->Location = System::Drawing::Point(1444, 631);
 			this->NextButton->Margin = System::Windows::Forms::Padding(2);
 			this->NextButton->Name = L"NextButton";
-			this->NextButton->Size = System::Drawing::Size(159, 75);
+			this->NextButton->Size = System::Drawing::Size(140, 75);
 			this->NextButton->TabIndex = 63;
 			this->NextButton->Text = L"NEXT";
 			this->NextButton->UseVisualStyleBackColor = false;
