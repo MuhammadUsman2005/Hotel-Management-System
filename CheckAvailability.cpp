@@ -27,18 +27,43 @@ void CheckAvailability::LoadData()
         String^ connString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\Hotel Management System\\HOTEL MANAGEMENT SYSTEM\\project resources\\database\\connection.accdb;";
         OleDbConnection^ conn = gcnew OleDbConnection(connString);
         conn->Open();
-        OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter("SELECT rooms, type, price, roomNo FROM rooms;", conn);
+        OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter("SELECT rooms, type, price FROM rooms;", conn);
 
         DataTable^ dt = gcnew DataTable();
         adapter->Fill(dt);
-        dataGridView1->DataSource = dt;
+        TotalRoomsGridView->DataSource = dt;
         conn->Close();
     }
     catch (Exception^ ex) {
         MessageBox::Show("Error: " + ex->Message);
     }
 
+    // Khud se apna layout set karke gridview mein fix ho jaye ga
+	TotalRoomsGridView->AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode::Fill;
 
+    try {
+
+        /* Yahan hum ne DataGridView ko database se data load karne ka code likha hai.
+         Jaise hee form load hoga, tou DataGridView mein data load ho jaye ga */
+
+
+        String^ connString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\Hotel Management System\\HOTEL MANAGEMENT SYSTEM\\project resources\\database\\connection.accdb;";
+        OleDbConnection^ conn = gcnew OleDbConnection(connString);
+        conn->Open();
+        OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter("SELECT roomNo FROM rooms;", conn);
+
+        DataTable^ dt = gcnew DataTable();
+        adapter->Fill(dt);
+        BookedRoomsGridView->DataSource = dt;
+        conn->Close();
+    }
+    catch (Exception^ ex) {
+        MessageBox::Show("Error: " + ex->Message);
+    }
+
+    // Khud se apna layout set karke gridview mein fix ho jaye ga
+    BookedRoomsGridView->AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode::Fill;
+	
 
 }
 

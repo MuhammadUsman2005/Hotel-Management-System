@@ -154,10 +154,10 @@ namespace HOTELMANAGEMENTSYSTEM {
 			// 
 			this->pictureBox5->BackColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->pictureBox5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox5.Image")));
-			this->pictureBox5->Location = System::Drawing::Point(879, 161);
+			this->pictureBox5->Location = System::Drawing::Point(879, 179);
 			this->pictureBox5->Margin = System::Windows::Forms::Padding(2);
 			this->pictureBox5->Name = L"pictureBox5";
-			this->pictureBox5->Size = System::Drawing::Size(240, 184);
+			this->pictureBox5->Size = System::Drawing::Size(240, 206);
 			this->pictureBox5->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox5->TabIndex = 39;
 			this->pictureBox5->TabStop = false;
@@ -166,10 +166,10 @@ namespace HOTELMANAGEMENTSYSTEM {
 			// 
 			this->pictureBox2->BackColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
-			this->pictureBox2->Location = System::Drawing::Point(366, 477);
+			this->pictureBox2->Location = System::Drawing::Point(366, 493);
 			this->pictureBox2->Margin = System::Windows::Forms::Padding(2);
 			this->pictureBox2->Name = L"pictureBox2";
-			this->pictureBox2->Size = System::Drawing::Size(246, 184);
+			this->pictureBox2->Size = System::Drawing::Size(246, 206);
 			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox2->TabIndex = 34;
 			this->pictureBox2->TabStop = false;
@@ -178,10 +178,10 @@ namespace HOTELMANAGEMENTSYSTEM {
 			// 
 			this->pictureBox1->BackColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(366, 161);
+			this->pictureBox1->Location = System::Drawing::Point(366, 179);
 			this->pictureBox1->Margin = System::Windows::Forms::Padding(2);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(240, 184);
+			this->pictureBox1->Size = System::Drawing::Size(246, 206);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox1->TabIndex = 45;
 			this->pictureBox1->TabStop = false;
@@ -190,10 +190,10 @@ namespace HOTELMANAGEMENTSYSTEM {
 			// 
 			this->pictureBox6->BackColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->pictureBox6->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox6.Image")));
-			this->pictureBox6->Location = System::Drawing::Point(879, 477);
+			this->pictureBox6->Location = System::Drawing::Point(879, 493);
 			this->pictureBox6->Margin = System::Windows::Forms::Padding(2);
 			this->pictureBox6->Name = L"pictureBox6";
-			this->pictureBox6->Size = System::Drawing::Size(246, 184);
+			this->pictureBox6->Size = System::Drawing::Size(246, 206);
 			this->pictureBox6->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox6->TabIndex = 40;
 			this->pictureBox6->TabStop = false;
@@ -205,10 +205,10 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->BookRoomsButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->BookRoomsButton->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->BookRoomsButton->Location = System::Drawing::Point(366, 360);
+			this->BookRoomsButton->Location = System::Drawing::Point(366, 389);
 			this->BookRoomsButton->Margin = System::Windows::Forms::Padding(2);
 			this->BookRoomsButton->Name = L"BookRoomsButton";
-			this->BookRoomsButton->Size = System::Drawing::Size(240, 57);
+			this->BookRoomsButton->Size = System::Drawing::Size(246, 57);
 			this->BookRoomsButton->TabIndex = 46;
 			this->BookRoomsButton->Text = L"BOOK ROOM";
 			this->BookRoomsButton->UseVisualStyleBackColor = false;
@@ -221,7 +221,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->GenerateBillsButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->GenerateBillsButton->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->GenerateBillsButton->Location = System::Drawing::Point(873, 675);
+			this->GenerateBillsButton->Location = System::Drawing::Point(879, 703);
 			this->GenerateBillsButton->Margin = System::Windows::Forms::Padding(2);
 			this->GenerateBillsButton->Name = L"GenerateBillsButton";
 			this->GenerateBillsButton->Size = System::Drawing::Size(246, 57);
@@ -237,7 +237,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->ViewDetailsButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->ViewDetailsButton->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->ViewDetailsButton->Location = System::Drawing::Point(879, 360);
+			this->ViewDetailsButton->Location = System::Drawing::Point(879, 389);
 			this->ViewDetailsButton->Margin = System::Windows::Forms::Padding(2);
 			this->ViewDetailsButton->Name = L"ViewDetailsButton";
 			this->ViewDetailsButton->Size = System::Drawing::Size(240, 57);
@@ -253,7 +253,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->CheckAvailabilityButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->CheckAvailabilityButton->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->CheckAvailabilityButton->Location = System::Drawing::Point(366, 675);
+			this->CheckAvailabilityButton->Location = System::Drawing::Point(366, 703);
 			this->CheckAvailabilityButton->Margin = System::Windows::Forms::Padding(2);
 			this->CheckAvailabilityButton->Name = L"CheckAvailabilityButton";
 			this->CheckAvailabilityButton->Size = System::Drawing::Size(246, 57);
@@ -265,13 +265,13 @@ namespace HOTELMANAGEMENTSYSTEM {
 			// LogoutButton
 			// 
 			this->LogoutButton->BackColor = System::Drawing::Color::Crimson;
-			this->LogoutButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->LogoutButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->LogoutButton->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->LogoutButton->Location = System::Drawing::Point(1282, 161);
+			this->LogoutButton->Location = System::Drawing::Point(1281, 179);
 			this->LogoutButton->Margin = System::Windows::Forms::Padding(2);
 			this->LogoutButton->Name = L"LogoutButton";
-			this->LogoutButton->Size = System::Drawing::Size(139, 60);
+			this->LogoutButton->Size = System::Drawing::Size(158, 60);
 			this->LogoutButton->TabIndex = 50;
 			this->LogoutButton->Text = L"LOGOUT";
 			this->LogoutButton->UseVisualStyleBackColor = false;
@@ -281,7 +281,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1604, 817);
+			this->ClientSize = System::Drawing::Size(1604, 881);
 			this->Controls->Add(this->LogoutButton);
 			this->Controls->Add(this->CheckAvailabilityButton);
 			this->Controls->Add(this->ViewDetailsButton);

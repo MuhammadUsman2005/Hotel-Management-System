@@ -52,6 +52,11 @@ namespace HOTELMANAGEMENTSYSTEM {
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::PictureBox^ pictureBox3;
 	private: System::Windows::Forms::Panel^ panel1;
+
+
+
+
+
 	private: System::Windows::Forms::TextBox^ textBoxPassword;
 		   void CheckLogin(System::Object^ sender, System::EventArgs^ e);
 		   
@@ -117,7 +122,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->ClearButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->ClearButton->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->ClearButton->Location = System::Drawing::Point(872, 623);
+			this->ClearButton->Location = System::Drawing::Point(909, 609);
 			this->ClearButton->Margin = System::Windows::Forms::Padding(2);
 			this->ClearButton->Name = L"ClearButton";
 			this->ClearButton->Size = System::Drawing::Size(218, 46);
@@ -133,7 +138,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->LoginButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->LoginButton->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->LoginButton->Location = System::Drawing::Point(872, 513);
+			this->LoginButton->Location = System::Drawing::Point(909, 504);
 			this->LoginButton->Margin = System::Windows::Forms::Padding(2);
 			this->LoginButton->Name = L"LoginButton";
 			this->LoginButton->Size = System::Drawing::Size(218, 46);
@@ -151,7 +156,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->panel4->Controls->Add(this->textBoxPassword);
 			this->panel4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 26.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->panel4->Location = System::Drawing::Point(756, 382);
+			this->panel4->Location = System::Drawing::Point(778, 378);
 			this->panel4->Margin = System::Windows::Forms::Padding(2);
 			this->panel4->Name = L"panel4";
 			this->panel4->Size = System::Drawing::Size(481, 64);
@@ -219,7 +224,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->panel3->Controls->Add(this->textBoxUserName);
 			this->panel3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 26.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->panel3->Location = System::Drawing::Point(756, 265);
+			this->panel3->Location = System::Drawing::Point(778, 265);
 			this->panel3->Margin = System::Windows::Forms::Padding(2);
 			this->panel3->Name = L"panel3";
 			this->panel3->Size = System::Drawing::Size(481, 64);
@@ -264,7 +269,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 				static_cast<System::Byte>(0)));
 			this->label4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			this->label4->Location = System::Drawing::Point(743, 126);
+			this->label4->Location = System::Drawing::Point(772, 147);
 			this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(494, 55);
@@ -278,7 +283,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 24, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::White;
-			this->label1->Location = System::Drawing::Point(67, 448);
+			this->label1->Location = System::Drawing::Point(66, 463);
 			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(285, 38);
@@ -291,7 +296,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->label2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 24, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::Color::White;
-			this->label2->Location = System::Drawing::Point(31, 512);
+			this->label2->Location = System::Drawing::Point(33, 534);
 			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(347, 38);
@@ -304,7 +309,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->label3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 24, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label3->ForeColor = System::Drawing::Color::White;
-			this->label3->Location = System::Drawing::Point(142, 576);
+			this->label3->Location = System::Drawing::Point(139, 609);
 			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(130, 38);
@@ -314,7 +319,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 			// pictureBox3
 			// 
 			this->pictureBox3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.Image")));
-			this->pictureBox3->Location = System::Drawing::Point(73, 126);
+			this->pictureBox3->Location = System::Drawing::Point(73, 163);
 			this->pictureBox3->Margin = System::Windows::Forms::Padding(2);
 			this->pictureBox3->Name = L"pictureBox3";
 			this->pictureBox3->Size = System::Drawing::Size(278, 203);
@@ -334,14 +339,14 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->panel1->Location = System::Drawing::Point(0, 0);
 			this->panel1->Margin = System::Windows::Forms::Padding(2);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(427, 740);
+			this->panel1->Size = System::Drawing::Size(427, 881);
 			this->panel1->TabIndex = 14;
 			// 
 			// Login
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1511, 740);
+			this->ClientSize = System::Drawing::Size(1604, 881);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->ClearButton);
 			this->Controls->Add(this->LoginButton);

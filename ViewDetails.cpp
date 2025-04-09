@@ -51,6 +51,8 @@ void ViewDetails::LoadData()
         MessageBox::Show("Error: " + ex->Message);
     }
 
+    // Khud se layout set karke poore gridview mein fix ho jaye ga
+    dataGridView1->AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode::Fill;
 
 
 }

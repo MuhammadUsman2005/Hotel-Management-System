@@ -157,6 +157,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 	private: System::Windows::Forms::ComboBox^ NationalityComboBox;
 
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
+private: System::Windows::Forms::Label^ label3;
 
 
 
@@ -206,6 +207,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->GenderComboBox = (gcnew System::Windows::Forms::ComboBox());
 			this->NationalityComboBox = (gcnew System::Windows::Forms::ComboBox());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
@@ -214,22 +216,22 @@ namespace HOTELMANAGEMENTSYSTEM {
 			// 
 			this->ResidentialAddressBox->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->ResidentialAddressBox->Location = System::Drawing::Point(217, 504);
+			this->ResidentialAddressBox->Location = System::Drawing::Point(217, 534);
 			this->ResidentialAddressBox->Margin = System::Windows::Forms::Padding(2);
 			this->ResidentialAddressBox->Multiline = true;
 			this->ResidentialAddressBox->Name = L"ResidentialAddressBox";
-			this->ResidentialAddressBox->Size = System::Drawing::Size(301, 31);
+			this->ResidentialAddressBox->Size = System::Drawing::Size(271, 31);
 			this->ResidentialAddressBox->TabIndex = 49;
 			// 
 			// ContactNumberTextBox
 			// 
 			this->ContactNumberTextBox->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->ContactNumberTextBox->Location = System::Drawing::Point(217, 642);
+			this->ContactNumberTextBox->Location = System::Drawing::Point(217, 672);
 			this->ContactNumberTextBox->Margin = System::Windows::Forms::Padding(2);
 			this->ContactNumberTextBox->Multiline = true;
 			this->ContactNumberTextBox->Name = L"ContactNumberTextBox";
-			this->ContactNumberTextBox->Size = System::Drawing::Size(301, 31);
+			this->ContactNumberTextBox->Size = System::Drawing::Size(271, 31);
 			this->ContactNumberTextBox->TabIndex = 48;
 			// 
 			// label12
@@ -238,7 +240,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 				static_cast<System::Byte>(0)));
 			this->label12->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			this->label12->Location = System::Drawing::Point(49, 504);
+			this->label12->Location = System::Drawing::Point(51, 532);
 			this->label12->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label12->Name = L"label12";
 			this->label12->Size = System::Drawing::Size(136, 56);
@@ -252,7 +254,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 				static_cast<System::Byte>(0)));
 			this->label11->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			this->label11->Location = System::Drawing::Point(19, 647);
+			this->label11->Location = System::Drawing::Point(16, 677);
 			this->label11->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label11->Name = L"label11";
 			this->label11->Size = System::Drawing::Size(177, 26);
@@ -266,7 +268,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->NextButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->NextButton->ForeColor = System::Drawing::SystemColors::Control;
-			this->NextButton->Location = System::Drawing::Point(1369, 663);
+			this->NextButton->Location = System::Drawing::Point(1369, 691);
 			this->NextButton->Margin = System::Windows::Forms::Padding(2);
 			this->NextButton->Name = L"NextButton";
 			this->NextButton->Size = System::Drawing::Size(205, 75);
@@ -282,7 +284,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->DeleteButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->DeleteButton->ForeColor = System::Drawing::SystemColors::Control;
-			this->DeleteButton->Location = System::Drawing::Point(814, 663);
+			this->DeleteButton->Location = System::Drawing::Point(798, 691);
 			this->DeleteButton->Margin = System::Windows::Forms::Padding(2);
 			this->DeleteButton->Name = L"DeleteButton";
 			this->DeleteButton->Size = System::Drawing::Size(205, 75);
@@ -298,7 +300,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->AddButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->AddButton->ForeColor = System::Drawing::SystemColors::Control;
-			this->AddButton->Location = System::Drawing::Point(545, 663);
+			this->AddButton->Location = System::Drawing::Point(512, 691);
 			this->AddButton->Margin = System::Windows::Forms::Padding(2);
 			this->AddButton->Name = L"AddButton";
 			this->AddButton->Size = System::Drawing::Size(205, 75);
@@ -314,7 +316,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->HomeButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->HomeButton->ForeColor = System::Drawing::SystemColors::Control;
-			this->HomeButton->Location = System::Drawing::Point(1091, 663);
+			this->HomeButton->Location = System::Drawing::Point(1084, 691);
 			this->HomeButton->Margin = System::Windows::Forms::Padding(2);
 			this->HomeButton->Name = L"HomeButton";
 			this->HomeButton->Size = System::Drawing::Size(205, 75);
@@ -327,11 +329,11 @@ namespace HOTELMANAGEMENTSYSTEM {
 			// 
 			this->EmailTextBox->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->EmailTextBox->Location = System::Drawing::Point(217, 576);
+			this->EmailTextBox->Location = System::Drawing::Point(217, 605);
 			this->EmailTextBox->Margin = System::Windows::Forms::Padding(2);
 			this->EmailTextBox->Multiline = true;
 			this->EmailTextBox->Name = L"EmailTextBox";
-			this->EmailTextBox->Size = System::Drawing::Size(301, 31);
+			this->EmailTextBox->Size = System::Drawing::Size(271, 31);
 			this->EmailTextBox->TabIndex = 37;
 			// 
 			// label9
@@ -340,7 +342,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 				static_cast<System::Byte>(0)));
 			this->label9->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			this->label9->Location = System::Drawing::Point(77, 576);
+			this->label9->Location = System::Drawing::Point(77, 605);
 			this->label9->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(87, 42);
@@ -354,7 +356,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 				static_cast<System::Byte>(0)));
 			this->label7->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			this->label7->Location = System::Drawing::Point(68, 307);
+			this->label7->Location = System::Drawing::Point(68, 325);
 			this->label7->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(96, 26);
@@ -368,7 +370,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 				static_cast<System::Byte>(0)));
 			this->label6->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			this->label6->Location = System::Drawing::Point(39, 243);
+			this->label6->Location = System::Drawing::Point(45, 255);
 			this->label6->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(148, 26);
@@ -382,7 +384,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 				static_cast<System::Byte>(0)));
 			this->label4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			this->label4->Location = System::Drawing::Point(49, 108);
+			this->label4->Location = System::Drawing::Point(55, 119);
 			this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(131, 26);
@@ -393,11 +395,11 @@ namespace HOTELMANAGEMENTSYSTEM {
 			// 
 			this->FisrtNameTextBox->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->FisrtNameTextBox->Location = System::Drawing::Point(217, 102);
+			this->FisrtNameTextBox->Location = System::Drawing::Point(217, 113);
 			this->FisrtNameTextBox->Margin = System::Windows::Forms::Padding(2);
 			this->FisrtNameTextBox->Multiline = true;
 			this->FisrtNameTextBox->Name = L"FisrtNameTextBox";
-			this->FisrtNameTextBox->Size = System::Drawing::Size(301, 32);
+			this->FisrtNameTextBox->Size = System::Drawing::Size(271, 32);
 			this->FisrtNameTextBox->TabIndex = 30;
 			// 
 			// label1
@@ -406,7 +408,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			this->label1->Location = System::Drawing::Point(49, 368);
+			this->label1->Location = System::Drawing::Point(51, 396);
 			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(136, 32);
@@ -471,11 +473,11 @@ namespace HOTELMANAGEMENTSYSTEM {
 			// 
 			this->LastNameTextBox->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->LastNameTextBox->Location = System::Drawing::Point(217, 169);
+			this->LastNameTextBox->Location = System::Drawing::Point(217, 183);
 			this->LastNameTextBox->Margin = System::Windows::Forms::Padding(2);
 			this->LastNameTextBox->Multiline = true;
 			this->LastNameTextBox->Name = L"LastNameTextBox";
-			this->LastNameTextBox->Size = System::Drawing::Size(301, 32);
+			this->LastNameTextBox->Size = System::Drawing::Size(271, 32);
 			this->LastNameTextBox->TabIndex = 56;
 			// 
 			// label10
@@ -485,7 +487,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 				static_cast<System::Byte>(0)));
 			this->label10->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			this->label10->Location = System::Drawing::Point(53, 175);
+			this->label10->Location = System::Drawing::Point(55, 189);
 			this->label10->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(127, 26);
@@ -498,7 +500,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 				static_cast<System::Byte>(0)));
 			this->label13->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			this->label13->Location = System::Drawing::Point(51, 435);
+			this->label13->Location = System::Drawing::Point(51, 464);
 			this->label13->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label13->Name = L"label13";
 			this->label13->Size = System::Drawing::Size(136, 32);
@@ -512,7 +514,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 				static_cast<System::Byte>(0)));
 			this->label14->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			this->label14->Location = System::Drawing::Point(19, 712);
+			this->label14->Location = System::Drawing::Point(19, 740);
 			this->label14->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label14->Name = L"label14";
 			this->label14->Size = System::Drawing::Size(174, 26);
@@ -523,11 +525,11 @@ namespace HOTELMANAGEMENTSYSTEM {
 			// 
 			this->dateTimePicker1->CalendarFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->dateTimePicker1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular,
+			this->dateTimePicker1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.75F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->dateTimePicker1->Location = System::Drawing::Point(217, 709);
+			this->dateTimePicker1->Location = System::Drawing::Point(217, 739);
 			this->dateTimePicker1->Name = L"dateTimePicker1";
-			this->dateTimePicker1->Size = System::Drawing::Size(301, 29);
+			this->dateTimePicker1->Size = System::Drawing::Size(271, 27);
 			this->dateTimePicker1->TabIndex = 62;
 			// 
 			// RoomNoComboBox
@@ -539,25 +541,25 @@ namespace HOTELMANAGEMENTSYSTEM {
 				L"101 - DELUXE", L"102 - DELUXE", L"103 - SUITE",
 					L"104 - SUITE", L"105 - SUITE", L"106 - STANDARD", L"107 - STANDARD", L"108 - STANDARD"
 			});
-			this->RoomNoComboBox->Location = System::Drawing::Point(217, 435);
+			this->RoomNoComboBox->Location = System::Drawing::Point(217, 464);
 			this->RoomNoComboBox->Margin = System::Windows::Forms::Padding(2);
 			this->RoomNoComboBox->Name = L"RoomNoComboBox";
-			this->RoomNoComboBox->Size = System::Drawing::Size(301, 30);
+			this->RoomNoComboBox->Size = System::Drawing::Size(271, 30);
 			this->RoomNoComboBox->TabIndex = 60;
 			// 
 			// RoomTypeComboBox
 			// 
-			this->RoomTypeComboBox->Font = (gcnew System::Drawing::Font(L"Century Gothic", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->RoomTypeComboBox->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->RoomTypeComboBox->FormattingEnabled = true;
 			this->RoomTypeComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(3) {
 				L"SUITE ($ 200.0)", L"DELUXE ($ 150.0)",
 					L"STANDARD ($ 100.0)"
 			});
-			this->RoomTypeComboBox->Location = System::Drawing::Point(217, 368);
+			this->RoomTypeComboBox->Location = System::Drawing::Point(217, 395);
 			this->RoomTypeComboBox->Margin = System::Windows::Forms::Padding(2);
 			this->RoomTypeComboBox->Name = L"RoomTypeComboBox";
-			this->RoomTypeComboBox->Size = System::Drawing::Size(301, 30);
+			this->RoomTypeComboBox->Size = System::Drawing::Size(271, 31);
 			this->RoomTypeComboBox->TabIndex = 58;
 			// 
 			// GenderComboBox
@@ -566,10 +568,10 @@ namespace HOTELMANAGEMENTSYSTEM {
 				static_cast<System::Byte>(0)));
 			this->GenderComboBox->FormattingEnabled = true;
 			this->GenderComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"MALE", L"FEMALE" });
-			this->GenderComboBox->Location = System::Drawing::Point(217, 303);
+			this->GenderComboBox->Location = System::Drawing::Point(217, 325);
 			this->GenderComboBox->Margin = System::Windows::Forms::Padding(2);
 			this->GenderComboBox->Name = L"GenderComboBox";
-			this->GenderComboBox->Size = System::Drawing::Size(301, 30);
+			this->GenderComboBox->Size = System::Drawing::Size(271, 30);
 			this->GenderComboBox->TabIndex = 39;
 			// 
 			// NationalityComboBox
@@ -581,10 +583,10 @@ namespace HOTELMANAGEMENTSYSTEM {
 				L"PAKISTAN", L"INDIA", L"BANGLADESH",
 					L"SRI LANKA", L"AFGHANISTAN", L"ENGLAND", L"CHINA", L"OTHER"
 			});
-			this->NationalityComboBox->Location = System::Drawing::Point(217, 239);
+			this->NationalityComboBox->Location = System::Drawing::Point(217, 255);
 			this->NationalityComboBox->Margin = System::Windows::Forms::Padding(2);
 			this->NationalityComboBox->Name = L"NationalityComboBox";
-			this->NationalityComboBox->Size = System::Drawing::Size(301, 30);
+			this->NationalityComboBox->Size = System::Drawing::Size(271, 30);
 			this->NationalityComboBox->TabIndex = 55;
 			// 
 			// dataGridView1
@@ -592,10 +594,11 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->dataGridView1->AllowUserToOrderColumns = true;
 			this->dataGridView1->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::AllCells;
 			this->dataGridView1->AutoSizeRowsMode = System::Windows::Forms::DataGridViewAutoSizeRowsMode::AllCells;
+			this->dataGridView1->BackgroundColor = System::Drawing::SystemColors::InactiveBorder;
 			dataGridViewCellStyle1->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
 			dataGridViewCellStyle1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			dataGridViewCellStyle1->ForeColor = System::Drawing::Color::White;
 			dataGridViewCellStyle1->SelectionBackColor = System::Drawing::SystemColors::Highlight;
@@ -603,19 +606,35 @@ namespace HOTELMANAGEMENTSYSTEM {
 			dataGridViewCellStyle1->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
 			this->dataGridView1->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
 			this->dataGridView1->EnableHeadersVisualStyles = false;
-			this->dataGridView1->Location = System::Drawing::Point(545, 108);
+			this->dataGridView1->Location = System::Drawing::Point(512, 189);
 			this->dataGridView1->Margin = System::Windows::Forms::Padding(2);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 90;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(1029, 499);
+			this->dataGridView1->Size = System::Drawing::Size(1062, 458);
 			this->dataGridView1->TabIndex = 50;
+			// 
+			// label3
+			// 
+			this->label3->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->label3->AutoSize = true;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 27.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label3->ForeColor = System::Drawing::SystemColors::Highlight;
+			this->label3->Location = System::Drawing::Point(765, 113);
+			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(580, 44);
+			this->label3->TabIndex = 4;
+			this->label3->Text = L"ROOM BOOKING INFORMATION";
+			this->label3->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			// 
 			// BookRooms
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1604, 881);
+			this->Controls->Add(this->label3);
 			this->Controls->Add(this->dateTimePicker1);
 			this->Controls->Add(this->label14);
 			this->Controls->Add(this->RoomNoComboBox);

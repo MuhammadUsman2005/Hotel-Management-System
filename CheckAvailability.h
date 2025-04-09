@@ -62,9 +62,12 @@ namespace HOTELMANAGEMENTSYSTEM {
 	private: System::Windows::Forms::Label^ label14;
 	private: System::Windows::Forms::Label^ label13;
 	private: System::Windows::Forms::Label^ label16;
-	private: System::Windows::Forms::DataGridView^ dataGridView1;
+	private: System::Windows::Forms::DataGridView^ TotalRoomsGridView;
 	private: System::Windows::Forms::Button^ BackButton;
 	private: System::Windows::Forms::Button^ NextButton;
+	private: System::Windows::Forms::DataGridView^ BookedRoomsGridView;
+	private: System::Windows::Forms::Label^ label17;
+	private: System::Windows::Forms::Label^ label18;
 
 
 
@@ -82,6 +85,8 @@ namespace HOTELMANAGEMENTSYSTEM {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
@@ -103,15 +108,19 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->label16 = (gcnew System::Windows::Forms::Label());
-			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->TotalRoomsGridView = (gcnew System::Windows::Forms::DataGridView());
 			this->BackButton = (gcnew System::Windows::Forms::Button());
 			this->NextButton = (gcnew System::Windows::Forms::Button());
+			this->BookedRoomsGridView = (gcnew System::Windows::Forms::DataGridView());
+			this->label17 = (gcnew System::Windows::Forms::Label());
+			this->label18 = (gcnew System::Windows::Forms::Label());
 			this->panel1->SuspendLayout();
 			this->panel2->SuspendLayout();
 			this->panel5->SuspendLayout();
 			this->panel4->SuspendLayout();
 			this->panel3->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->TotalRoomsGridView))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->BookedRoomsGridView))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// panel1
@@ -157,6 +166,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 			// panel2
 			// 
 			this->panel2->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->panel2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->panel2->Controls->Add(this->label15);
 			this->panel2->Controls->Add(this->label14);
 			this->panel2->Controls->Add(this->label13);
@@ -170,9 +180,9 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->panel2->Controls->Add(this->panel4);
 			this->panel2->Controls->Add(this->panel3);
 			this->panel2->Controls->Add(this->label10);
-			this->panel2->Location = System::Drawing::Point(26, 126);
+			this->panel2->Location = System::Drawing::Point(28, 112);
 			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(784, 623);
+			this->panel2->Size = System::Drawing::Size(784, 599);
 			this->panel2->TabIndex = 85;
 			// 
 			// label15
@@ -413,20 +423,30 @@ namespace HOTELMANAGEMENTSYSTEM {
 				static_cast<System::Byte>(0)));
 			this->label16->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			this->label16->Location = System::Drawing::Point(836, 126);
+			this->label16->Location = System::Drawing::Point(836, 112);
 			this->label16->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label16->Name = L"label16";
 			this->label16->Size = System::Drawing::Size(740, 64);
 			this->label16->TabIndex = 73;
 			this->label16->Text = L"CURRENT AVAILABLE ROOMS";
 			// 
-			// dataGridView1
+			// TotalRoomsGridView
 			// 
-			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(836, 242);
-			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(740, 380);
-			this->dataGridView1->TabIndex = 86;
+			this->TotalRoomsGridView->BackgroundColor = System::Drawing::SystemColors::InactiveBorder;
+			dataGridViewCellStyle1->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle1->BackColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			dataGridViewCellStyle1->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle1->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle1->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle1->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->TotalRoomsGridView->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+			this->TotalRoomsGridView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->TotalRoomsGridView->Location = System::Drawing::Point(836, 308);
+			this->TotalRoomsGridView->Name = L"TotalRoomsGridView";
+			this->TotalRoomsGridView->Size = System::Drawing::Size(388, 403);
+			this->TotalRoomsGridView->TabIndex = 86;
 			// 
 			// BackButton
 			// 
@@ -434,7 +454,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->BackButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->BackButton->ForeColor = System::Drawing::SystemColors::Control;
-			this->BackButton->Location = System::Drawing::Point(957, 674);
+			this->BackButton->Location = System::Drawing::Point(1122, 733);
 			this->BackButton->Margin = System::Windows::Forms::Padding(2);
 			this->BackButton->Name = L"BackButton";
 			this->BackButton->Size = System::Drawing::Size(210, 75);
@@ -450,7 +470,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->NextButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->NextButton->ForeColor = System::Drawing::SystemColors::Control;
-			this->NextButton->Location = System::Drawing::Point(1238, 674);
+			this->NextButton->Location = System::Drawing::Point(1366, 733);
 			this->NextButton->Margin = System::Windows::Forms::Padding(2);
 			this->NextButton->Name = L"NextButton";
 			this->NextButton->Size = System::Drawing::Size(210, 75);
@@ -459,14 +479,65 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->NextButton->UseVisualStyleBackColor = false;
 			this->NextButton->Click += gcnew System::EventHandler(this, &CheckAvailability::NextButton_Click_1);
 			// 
+			// BookedRoomsGridView
+			// 
+			this->BookedRoomsGridView->BackgroundColor = System::Drawing::SystemColors::InactiveBorder;
+			dataGridViewCellStyle2->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle2->BackColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			dataGridViewCellStyle2->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle2->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle2->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle2->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->BookedRoomsGridView->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+			this->BookedRoomsGridView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->BookedRoomsGridView->Location = System::Drawing::Point(1256, 308);
+			this->BookedRoomsGridView->Name = L"BookedRoomsGridView";
+			this->BookedRoomsGridView->Size = System::Drawing::Size(320, 403);
+			this->BookedRoomsGridView->TabIndex = 89;
+			// 
+			// label17
+			// 
+			this->label17->AutoSize = true;
+			this->label17->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->label17->Font = (gcnew System::Drawing::Font(L"Century Gothic", 24, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label17->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(185)));
+			this->label17->Location = System::Drawing::Point(905, 225);
+			this->label17->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label17->Name = L"label17";
+			this->label17->Size = System::Drawing::Size(238, 40);
+			this->label17->TabIndex = 90;
+			this->label17->Text = L"TOTAL ROOMS";
+			// 
+			// label18
+			// 
+			this->label18->AutoSize = true;
+			this->label18->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->label18->Font = (gcnew System::Drawing::Font(L"Century Gothic", 24, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label18->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(185)));
+			this->label18->Location = System::Drawing::Point(1268, 225);
+			this->label18->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label18->Name = L"label18";
+			this->label18->Size = System::Drawing::Size(279, 40);
+			this->label18->TabIndex = 91;
+			this->label18->Text = L"BOOKED ROOMS";
+			// 
 			// CheckAvailability
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1604, 881);
+			this->Controls->Add(this->label18);
+			this->Controls->Add(this->label17);
+			this->Controls->Add(this->BookedRoomsGridView);
 			this->Controls->Add(this->NextButton);
 			this->Controls->Add(this->BackButton);
-			this->Controls->Add(this->dataGridView1);
+			this->Controls->Add(this->TotalRoomsGridView);
 			this->Controls->Add(this->label16);
 			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->panel1);
@@ -479,7 +550,8 @@ namespace HOTELMANAGEMENTSYSTEM {
 			this->panel5->ResumeLayout(false);
 			this->panel4->ResumeLayout(false);
 			this->panel3->ResumeLayout(false);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->TotalRoomsGridView))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->BookedRoomsGridView))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
