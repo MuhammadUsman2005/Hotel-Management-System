@@ -21,7 +21,6 @@ namespace HOTELMANAGEMENTSYSTEM {
 
             // SQL Queries
 			// "bookings", "customers", "details", and "rooms" tables
-
             // "POORI APPLICATION KA MOST IMPORTANT PART HAI YEH WALI QUERY KYUN KE IS MEIN INNER JOINS BHI HAIN " 
 
             String^ query = "SELECT b.bookingID, b.checkinDate, c.firstName, c.lastName, c.address, c.mobile, b.roomNo, c.gender, "
@@ -29,7 +28,6 @@ namespace HOTELMANAGEMENTSYSTEM {
                 "FROM ((bookings b INNER JOIN customers c ON c.bookingID = b.bookingID) "
                 "INNER JOIN details d ON (d.bookingID = b.bookingID AND d.roomNo = b.roomNo))"
                 "INNER JOIN rooms r ON r.roomNo = b.roomNo";
-
 
             OleDbCommand^ command = gcnew OleDbCommand(query, connection);
             OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(command);
@@ -52,15 +50,13 @@ namespace HOTELMANAGEMENTSYSTEM {
     /* "ADD" button ka event handler initialize kiya hai, jab ADD wala button click hoga,
     tou curly brackets k andar likhi hui saari cheezen step by step execute hongi.*/
 
-
     void BookRooms::AddButton_Click(System::Object^ sender, System::EventArgs^ e) {
 
-		// Agar koi aik field bhi khaali chhor di tou yeh message box show hoga
-
+        // Agar koi aik field bhi khaali chhor di tou yeh message box show hoga
         if (FisrtNameTextBox->Text->Length == 0 || LastNameTextBox->Text->Length == 0 ||
             NationalityComboBox->SelectedIndex == -1 || GenderComboBox->SelectedIndex == -1 || RoomTypeComboBox->SelectedIndex == -1 ||
             RoomNoComboBox->SelectedIndex == -1 || ResidentialAddressBox->Text->Length == 0 || EmailTextBox->Text->Length == 0 ||
-            ContactNumberTextBox->Text->Length == 0) 
+            ContactNumberTextBox->Text->Length == 0)
         {
             MessageBox::Show("Please fill all fields!");
             return;
@@ -69,15 +65,13 @@ namespace HOTELMANAGEMENTSYSTEM {
         // Yahan room type pe relevant room number select karne ki validation lagayi hai
 
         // SUITE wale rooms ki validation
-
-        if((RoomTypeComboBox->SelectedIndex == 0 ) && (RoomNoComboBox->SelectedIndex == 0 || RoomNoComboBox->SelectedIndex == 1 || RoomNoComboBox->SelectedIndex == 5 || RoomNoComboBox->SelectedIndex == 6 || RoomNoComboBox->SelectedIndex == 7))
-		{
-			MessageBox::Show("Please select the relevant room number for the selected room type!");
-			return;
-		}
+        if ((RoomTypeComboBox->SelectedIndex == 0) && (RoomNoComboBox->SelectedIndex == 0 || RoomNoComboBox->SelectedIndex == 1 || RoomNoComboBox->SelectedIndex == 5 || RoomNoComboBox->SelectedIndex == 6 || RoomNoComboBox->SelectedIndex == 7))
+        {
+            MessageBox::Show("Please select the relevant room number for the selected room type!");
+            return;
+        }
 
         // DELUXE wale rooms ki validation
-
         if ((RoomTypeComboBox->SelectedIndex == 1) && (RoomNoComboBox->SelectedIndex == 2 || RoomNoComboBox->SelectedIndex == 3 || RoomNoComboBox->SelectedIndex == 4 || RoomNoComboBox->SelectedIndex == 5 || RoomNoComboBox->SelectedIndex == 6 || RoomNoComboBox->SelectedIndex == 7))
         {
             MessageBox::Show("Please select the relevant room number for the selected room type!");
@@ -85,56 +79,64 @@ namespace HOTELMANAGEMENTSYSTEM {
         }
 
         // STANDARD wale rooms ki validation
-
         if ((RoomTypeComboBox->SelectedIndex == 2) && (RoomNoComboBox->SelectedIndex == 0 || RoomNoComboBox->SelectedIndex == 1 || RoomNoComboBox->SelectedIndex == 2 || RoomNoComboBox->SelectedIndex == 3 || RoomNoComboBox->SelectedIndex == 4))
         {
-			MessageBox::Show("Please select the relevant room number for the selected room type!");
-		    return;
-	    }
+            MessageBox::Show("Please select the relevant room number for the selected room type!");
+            return;
+        }
 
         // Yahan email pe validation lagayi hui hai
-
-		if (!EmailTextBox->Text->Contains("@") || !EmailTextBox->Text->Contains(".com")) 
+        if (!EmailTextBox->Text->Contains("@") || !EmailTextBox->Text->Contains(".com"))
         {
-			MessageBox::Show("Please enter a valid email address!");
-			return;
-		}
-	
+            MessageBox::Show("Please enter a valid email address!");
+            return;
+        }
 
-		// Yahan hum ne MS Access connect kiya hai
-
-        String^ connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\Hotel Management System\\HOTEL MANAGEMENT SYSTEM\\project resources\\database\\connection.accdb;";
-        OleDbConnection^ connection = gcnew OleDbConnection(connectionString);
+        // Yahan hum ne MS Access connect kiya hai
+        String^ connections =
+            "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\Hotel Management System\\HOTEL MANAGEMENT SYSTEM\\project resources\\database\\connection.accdb;";
+        OleDbConnection^ connection = gcnew OleDbConnection(connections);
 
         try {
             connection->Open();
+
+            // First check if room is already booked
+            String^ checkRoomQuery = "SELECT COUNT(*) FROM bookings WHERE roomNo = @roomNo";
+            OleDbCommand^ checkCommand = gcnew OleDbCommand(checkRoomQuery, connection);
+            checkCommand->Parameters->AddWithValue("@roomNo", RoomNoComboBox->Text);
+            int roomCount = Convert::ToInt32(checkCommand->ExecuteScalar());
+
+            if (roomCount > 0) {
+                MessageBox::Show("This room is already booked. Please select another room.");
+                connection->Close();
+                return;
+            }
+
+			// rooms table mein room number aur room type insert karne ki query
+
+			String^ roomsQuery = "INSERT INTO rooms (roomNo, roomType) VALUES (@roomNo, @roomType)";
+            OleDbCommand^ roomsCommand = gcnew OleDbCommand(roomsQuery, connection);
+			roomsCommand->Parameters->AddWithValue("@roomNo", RoomNoComboBox->Text);
+			roomsCommand->Parameters->AddWithValue("@roomType", RoomTypeComboBox->Text);
+			roomsCommand->ExecuteNonQuery();
+
+
             OleDbTransaction^ transaction = connection->BeginTransaction();
 
             try {
                 // 1. Insert into bookings table
-
-                String^ bookingQuery = "INSERT INTO bookings (checkinDate, roomNo ) VALUES (@checkinDate, @roomNo )";
+                String^ bookingQuery = "INSERT INTO bookings (checkinDate, roomNo) VALUES (@checkinDate, @roomNo)";
                 OleDbCommand^ bookingCommand = gcnew OleDbCommand(bookingQuery, connection, transaction);
-                
-                /* Yahan calender mein dar asal numbers, symbols and characters sab kuch hote hain isi liye sabko ASCII value mein
-                convert kar k "string data type k torr pe use kar rahe hain" */
-
-                /* Har jagah parameterized queries (@) use ki hain taake SQL Injection Attack
-                se bacha ja sakay 
-                SQL Injection Attack ye hota hai k user aisi query daal de k saara ka saara
-                data idhar ka udhar ho jaye*/
 
                 bookingCommand->Parameters->AddWithValue("@checkinDate", dateTimePicker1->Value.ToString("MM/dd/yyyy"));
-				bookingCommand->Parameters->AddWithValue("@roomNo", RoomNoComboBox->Text);
+                bookingCommand->Parameters->AddWithValue("@roomNo", RoomNoComboBox->Text);
                 bookingCommand->ExecuteNonQuery();
 
                 // auto-generated bookingID ko lega
-
                 bookingCommand->CommandText = "SELECT @@IDENTITY";
                 int bookingID = Convert::ToInt32(bookingCommand->ExecuteScalar());
 
                 // 2. Insert into customers table
-
                 String^ customerQuery = "INSERT INTO customers (bookingID, firstName, lastName, address, mobile, gender, email, nationality) "
                     "VALUES (@bookingID, @firstName, @lastName, @address, @mobile, @gender, @email, @nationality)";
                 OleDbCommand^ customerCommand = gcnew OleDbCommand(customerQuery, connection, transaction);
@@ -149,31 +151,19 @@ namespace HOTELMANAGEMENTSYSTEM {
                 customerCommand->ExecuteNonQuery();
 
                 // 3. Insert into details table
-
-                String^ detailsQuery = "INSERT INTO details (bookingID, roomNo ) VALUES (@bookingID, @roomNo )";
+                String^ detailsQuery = "INSERT INTO details (bookingID, roomNo) VALUES (@bookingID, @roomNo)";
                 OleDbCommand^ detailsCommand = gcnew OleDbCommand(detailsQuery, connection, transaction);
                 detailsCommand->Parameters->AddWithValue("@bookingID", bookingID);
-				detailsCommand->Parameters->AddWithValue("@roomNo", RoomNoComboBox->Text);
+                detailsCommand->Parameters->AddWithValue("@roomNo", RoomNoComboBox->Text);
                 detailsCommand->ExecuteNonQuery();
 
-                // 4. Insert into rooms table
-          
-                String^ roomsQuery = "INSERT INTO rooms (roomType, roomNo ) VALUES (@roomType, @roomNo )";
-				OleDbCommand^ roomsCommand = gcnew OleDbCommand(roomsQuery, connection, transaction);
-				roomsCommand->Parameters->AddWithValue("@roomType", RoomTypeComboBox->Text);
-				roomsCommand->Parameters->AddWithValue("@roomNo", RoomNoComboBox->Text);
-                roomsCommand->ExecuteNonQuery();
-
                 // Saare operations successful hone par, commit kar do
-
                 transaction->Commit();
 
                 // Jaise hee LoadData function call hoga, tou DataGridView update hojaye ga
-
                 LoadData();
 
                 // Saare boxes clear ho jayen ge
-               
                 FisrtNameTextBox->Clear();
                 LastNameTextBox->Clear();
                 NationalityComboBox->SelectedIndex = -1;

@@ -432,6 +432,7 @@ namespace HOTELMANAGEMENTSYSTEM {
 			// 
 			// TotalRoomsGridView
 			// 
+			this->TotalRoomsGridView->AllowUserToOrderColumns = true;
 			this->TotalRoomsGridView->BackgroundColor = System::Drawing::SystemColors::InactiveBorder;
 			dataGridViewCellStyle1->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
 			dataGridViewCellStyle1->BackColor = System::Drawing::SystemColors::Control;

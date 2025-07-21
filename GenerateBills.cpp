@@ -78,7 +78,7 @@ namespace HOTELMANAGEMENTSYSTEM {
         if (daysStayed == 0) daysStayed = 1;
 
         daysStayedTextbox->Text = daysStayed.ToString();
-        //CalculateTotalBill();
+        
     }
 
     void GenerateBills::CalculateTotalBill()
@@ -96,14 +96,9 @@ namespace HOTELMANAGEMENTSYSTEM {
             // Extract price from comboBox text (e.g., "$ 200.0 (SUITE)" -> 200.0)
             String^ priceText = roomPricePerNightComboBox->Text;
 
-            // Find the dollar sign
+            // Dollar sign ki position check kare ga
             int dollarPos = priceText->IndexOf("$");
-            if (dollarPos < 0)
-            {
-                MessageBox::Show("Invalid price format! Price should start with $");
-                return;
-            }
-
+            
             // Extract the numeric part after $
             String^ numericPart = priceText->Substring(dollarPos + 1)->Trim();
 
@@ -114,13 +109,7 @@ namespace HOTELMANAGEMENTSYSTEM {
                 numericPart = numericPart->Substring(0, spacePos);
             }
 
-            // Handle cases where there might be parentheses after number
-            int parenPos = numericPart->IndexOf("(");
-            if (parenPos > 0)
-            {
-                numericPart = numericPart->Substring(0, parenPos)->Trim();
-            }
-
+            
             // Convert to double using invariant culture
             double pricePerNight = Convert::ToDouble(numericPart, System::Globalization::CultureInfo::InvariantCulture);
 
@@ -146,7 +135,7 @@ namespace HOTELMANAGEMENTSYSTEM {
             OleDbConnection^ connection = gcnew OleDbConnection(connectionString);
             connection->Open();
 
-            // Extract price using the same reliable method
+            // Same wahi ooper wala tareeqa use kiya hai
             String^ priceText = roomPricePerNightComboBox->Text;
             int dollarPos = priceText->IndexOf("$");
             String^ numericPart = priceText->Substring(dollarPos + 1)->Trim();
@@ -223,7 +212,9 @@ namespace HOTELMANAGEMENTSYSTEM {
 
         String^ bookingID = bookingIDTextbox->Text; // Hamara wala input lega
 
-        String^ bookingQuery = "INSERT INTO bookings (checkoutDate ) VALUES (@checkoutDate )";
+		// Check-out date ko update karne ki query
+        String^ bookingQuery = "UPDATE bookings SET checkoutDate = @checkoutDate WHERE bookingID = @bookingID";
+
         OleDbCommand^ bookingCommand = gcnew OleDbCommand(bookingQuery, connection);
 
 		bookingCommand->Parameters->AddWithValue("@checkoutDate", checkOutDatePicker->Value.ToString("MM/dd/yyyy"));
